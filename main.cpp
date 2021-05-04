@@ -82,8 +82,8 @@ int main(int argc, char** argv) {
    
    glutInit(&argc, argv);                 // Initialize GLUT
    glutInitDisplayMode(GLUT_DOUBLE);
-  glutInitWindowSize(800,600); 
-   glutCreateWindow(" 085-12"); // Create a window with the given title
+  glutInitWindowSize(1200,800); 
+   glutCreateWindow("MasterLnxyOnDuty"); // Create a window with the given title
      // Set the window's initial width & height
     // Position the window's initial top-left corner
     
