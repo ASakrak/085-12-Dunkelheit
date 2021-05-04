@@ -79,7 +79,7 @@ void keyboard(unsigned char key,int x,int y)
  
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char** argv) {
-   
+   cout<<"Welcome To My App / Uygulamama Hoþgeldiniz / Dobrodošli U Moju Aplikaciju \n";
    glutInit(&argc, argv);                 // Initialize GLUT
    glutInitDisplayMode(GLUT_DOUBLE);
   glutInitWindowSize(1200,800); 
