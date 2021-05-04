@@ -11,6 +11,12 @@ int initial_time = time(NULL) , final_time,frame_count=0;
 void theCube()
 {
 	glPushMatrix();
+	glBegin(GL_TRIANGLES);
+glColor3f(0.5, 0.7, 0.3);
+glVertex3f(0, 0, 0);
+glVertex3f(1, 0, 0);
+glVertex3f(0, 1, 0);
+glEnd();
 	glColor3f(0.8,0.1,0.3);
 	glTranslatef(cx,cy,cz);
 	glutSolidCube(0.4);
@@ -40,7 +46,7 @@ void display()
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    glLoadIdentity();
    glTranslatef(-13,0,-45);
-   glRotatef(40,1,1,0);
+   glRotatef(29,1,1,0);
    
    drawGrid();
    theCube();
