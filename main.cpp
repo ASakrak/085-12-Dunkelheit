@@ -2,6 +2,7 @@
 #include <GL/glut.h>
 #include <time.h>
 #include <iostream> 
+#include <fstream>
 using namespace std;
 
 int cx=0,cy=0,cz=0;
@@ -12,10 +13,10 @@ void theCube()
 {
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
-glColor3f(0.5, 0.7, 0.3);
+glColor3f(0.7, 0.1, 0.1);
 glVertex3f(0, 0, 0);
-glVertex3f(1, 0, 0);
-glVertex3f(0, 1, 0);
+glVertex3f(2, 0, 0);
+glVertex3f(0, 3, 0);
 glEnd();
 	glColor3f(0.8,0.1,0.3);
 	glTranslatef(cx,cy,cz);
@@ -45,12 +46,14 @@ void display()
 {
    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
    glLoadIdentity();
-   glTranslatef(-13,0,-45);
+   glTranslatef(-13.5,0,-45);
    glRotatef(29,1,1,0);
    
    drawGrid();
    theCube();
    glutSwapBuffers();
+   
+  
    
    frame_count++;
    final_time = time(NULL);
@@ -92,7 +95,7 @@ int main(int argc, char** argv) {
    glutCreateWindow("MasterLnxyOnDuty"); // Create a window with the given title
      // Set the window's initial width & height
     // Position the window's initial top-left corner
-    
+ 
    glutDisplayFunc(display);
    glutKeyboardFunc(keyboard);
     init();
