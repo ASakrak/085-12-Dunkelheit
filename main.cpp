@@ -25,7 +25,7 @@ glEnd();
 	
 }
 
-void drawGrid() 
+void drawGrid()
 {
 	int i;
 	for (i=0;i<40;i++)
