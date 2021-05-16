@@ -13,11 +13,11 @@ void theCube()
 {
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
-glColor3f(0.1, 0.5, 0.1);
-glVertex3f(0, 0, 0);
-glVertex3f(2, 0, 0);
-glVertex3f(0, 3, 0);
-glEnd();
+    glColor3f(0.1, 0.5, 0.1);
+    glVertex3f(0, 0, 0);
+    glVertex3f(2, 0, 0);
+    glVertex3f(0, 3, 0);
+    glEnd();
 	glColor3f(0.9,0.1,0.1);
 	glTranslatef(cx,cy,cz);
 	glutSolidCube(0.4);
