@@ -5,6 +5,10 @@
 #include <fstream>
 using namespace std;
 
+
+int sum = 0;
+int x;
+ifstream inFile;
 int cx=0,cy=0,cz=0;
 
 int initial_time = time(NULL) , final_time,frame_count=0;
@@ -53,8 +57,8 @@ void display()
    theCube();
    glutSwapBuffers();
    
-  
-   
+
+	
    frame_count++;
    final_time = time(NULL);
    if(final_time - initial_time > 0)
