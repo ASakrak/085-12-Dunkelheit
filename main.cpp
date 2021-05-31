@@ -59,7 +59,7 @@ void display()
    
    
    ofstream MyFile("test.txt");
-   MyFile<<"dosya acildi / acilmadi";
+   
    
    MyFile.close();
 	cout<<MyFile;
