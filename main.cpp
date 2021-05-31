@@ -57,8 +57,11 @@ void display()
    theCube();
    glutSwapBuffers();
    
-
-	
+   ofstream MyFile("test.txt");
+   MyFile<<"dosya acildi / acilmadi";
+   
+   MyFile.close();
+	cout<<MyFile;
    frame_count++;
    final_time = time(NULL);
    if(final_time - initial_time > 0)

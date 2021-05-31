@@ -1,6 +1,1 @@
-Ihlamur için malzemeler;
-*Ihlamur
-*Su
-*Elma
-*Limon
-*Bal
+dosya acildi / acilmadi
