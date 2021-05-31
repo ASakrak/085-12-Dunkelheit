@@ -58,11 +58,6 @@ void display()
    glutSwapBuffers();
    
    
-   ofstream MyFile("test.txt");
-   
-   
-   MyFile.close();
-	cout<<MyFile;
   
    frame_count++;
    final_time = time(NULL);
