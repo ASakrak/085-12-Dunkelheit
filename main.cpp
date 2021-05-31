@@ -57,11 +57,13 @@ void display()
    theCube();
    glutSwapBuffers();
    
+   
    ofstream MyFile("test.txt");
    MyFile<<"dosya acildi / acilmadi";
    
    MyFile.close();
 	cout<<MyFile;
+  
    frame_count++;
    final_time = time(NULL);
    if(final_time - initial_time > 0)
@@ -102,7 +104,7 @@ int main(int argc, char** argv) {
    glutCreateWindow("MasterLnxyOnDuty"); // Create a window with the given title
      // Set the window's initial width & height
     // Position the window's initial top-left corner
- 
+
    glutDisplayFunc(display);
    glutKeyboardFunc(keyboard);
     init();
