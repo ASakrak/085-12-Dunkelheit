@@ -1,5 +1,5 @@
 # Master085-12
- My basic fps counter and opengl project.
+simple fps counter and opengl project.
 I used GL/glut.h library
 
 
