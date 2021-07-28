@@ -1,8 +1,5 @@
 //test
 
-
-
-
 #include <windows.h>
 #include <GL/glut.h>
 #include <time.h>
@@ -61,25 +58,24 @@ void drawGrid()
 void display()
 {
 
-	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
 	glBegin(GL_POLYGON);
-    
+
 	drawGrid();
 	theCube();
 	glutSwapBuffers();
 	glFlush();
 
 	glEnd();
-    
-    glVertex2f(0.0,5.0);
-    glVertex2f(-4.0,-3.0);
-    glVertex2f(4.0,-3.0);
-    glVertex2f(5.0,-2.0);
-    
+
+	glVertex2f(0.0, 5.0);
+	glVertex2f(-4.0, -3.0);
+	glVertex2f(4.0, -3.0);
+	glVertex2f(5.0, -2.0);
+
 	frame_count++;
 	final_time = time(NULL);
 	if (final_time - initial_time > 0)
@@ -102,9 +98,6 @@ void init()
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 	glOrtho(-90.0, 100.0, -15.0, 100.0, 0.0, 1.0);
 }
-
-
-
 
 void keyboard(unsigned char key, int x, int y)
 {
@@ -144,8 +137,6 @@ void keyboard(unsigned char key, int x, int y)
 	glutPostRedisplay();
 }
 
-
-
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
@@ -154,12 +145,12 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("MasterLenxiOnDuty"); // Create a window with the given title
-										  // Set the window's initial width & height
-										  // Position the window's initial top-left corner
+										   // Set the window's initial width & height
+										   // Position the window's initial top-left corner
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
-	
+
 	init();
 	// Register display callback handler for window re-paint
 	glutMainLoop();
