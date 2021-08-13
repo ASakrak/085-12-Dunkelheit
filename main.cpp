@@ -10,10 +10,72 @@ using namespace std;
 int sum = 0;
 int x;
 ifstream inFile;
+int sn;
 int cx = 0, cy = 0, cz = 0;
 
 int initial_time = time(NULL), final_time, frame_count = 0;
+DWORD dwResult;    
+for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
+{
+    XINPUT_STATE state;
+    ZeroMemory( &state, sizeof(XINPUT_STATE) );
 
+    // Simply get the state of the controller from XInput.
+    dwResult = XInputGetState( i, &state );
+
+    if( dwResult == ERROR_SUCCESS )
+    {
+        // Controller is connected
+    }
+    else
+    {
+        // Controller is not connected
+    }
+}DWORD dwResult;    
+for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
+{
+    XINPUT_STATE state;
+    ZeroMemory( &state, sizeof(XINPUT_STATE) );
+
+    // Simply get the state of the controller from XInput.
+    dwResult = XInputGetState( i, &state );
+
+    if( dwResult == ERROR_SUCCESS )
+    {
+        // Controller is connected
+    }
+    else
+    {
+        // Controller is not connected
+    }
+}
+struct Sign
+{
+	int x1, y1, z1; 
+	int state;
+	int total;
+};  Sign S[100];
+
+void addSign()
+{
+	S[0].state++; if(S[0].state>4) { S[0].state=1;}
+	int st=S[0].state;
+	
+	if(st==1) { S[0].total++; sn =S[0].total;}
+	if(st==1                     ){ S[sn] .x1=cx; S[sn].y1=cy; S[sn] .z1=cz;}
+}
+
+void drawSign()
+{ int i;
+  for (i=1;i<S[0].total+1;i++)
+  {
+  	glBegin(GL_TRIANGLES);
+  	glColor3f(0.2, 0.5, 1);
+  	glVertex3f(S[i] .x1,S[i] .y1,S[i] .z1);
+
+  	glEnd();
+  }
+}
 void theCube()
 {
 	glPushMatrix();
@@ -65,6 +127,7 @@ void display()
 	glBegin(GL_POLYGON);
 
 	drawGrid();
+	drawSign();
 	theCube();
 	glutSwapBuffers();
 	glFlush();
@@ -101,6 +164,9 @@ void init()
 
 void keyboard(unsigned char key, int x, int y)
 {
+	if(key=='h') {
+		addSign();
+	}
 	if (key == 'w')
 	{
 		cz -= 1;
@@ -133,6 +199,11 @@ void keyboard(unsigned char key, int x, int y)
 	{
 		cx += 1;
 	} //left /right
+	if (key == 'XINPUT_GAMEPAD_DPAD_UP')
+	{
+		cz -= 1;
+	}
+	
 
 	glutPostRedisplay();
 }
