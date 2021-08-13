@@ -5,6 +5,17 @@
 #include <time.h>
 #include <iostream>
 #include <fstream>
+#define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE  7849
+#define XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE 8689
+#define XINPUT_GAMEPAD_TRIGGER_THRESHOLD    30
+#define Xbox_BtnA               Btn(0)
+#define Xbox_BtnB               Btn(1)
+#define Xbox_BtnX               Btn(2)
+#define Xbox_BtnY               Btn(3)
+#define Xbox_LB                 Btn(4)
+#define Xbox_RB                 Btn(5)
+#define Xbox_Back               Btn(6)
+#define Xbox_Start              Btn(7)
 using namespace std;
 
 int sum = 0;
@@ -14,7 +25,9 @@ int sn;
 int cx = 0, cy = 0, cz = 0;
 
 int initial_time = time(NULL), final_time, frame_count = 0;
-DWORD dwResult;    
+
+
+/*DWORD dwResult;    
 for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
 {
     XINPUT_STATE state;
@@ -31,24 +44,7 @@ for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
     {
         // Controller is not connected
     }
-}DWORD dwResult;    
-for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
-{
-    XINPUT_STATE state;
-    ZeroMemory( &state, sizeof(XINPUT_STATE) );
-
-    // Simply get the state of the controller from XInput.
-    dwResult = XInputGetState( i, &state );
-
-    if( dwResult == ERROR_SUCCESS )
-    {
-        // Controller is connected
-    }
-    else
-    {
-        // Controller is not connected
-    }
-}
+}*/
 struct Sign
 {
 	int x1, y1, z1; 
@@ -199,10 +195,22 @@ void keyboard(unsigned char key, int x, int y)
 	{
 		cx += 1;
 	} //left /right
-	if (key == 'XINPUT_GAMEPAD_DPAD_UP')
+	if (key == 'Xbox_BtnA')
 	{
 		cz -= 1;
 	}
+	if (key == 'Btn(1)')
+	{
+		cz += 1;
+	} //forward / back
+	if (key == 'Btn(2)')
+	{
+		cx -= 1;
+	}
+	if (key == 'Btn(3)')
+	{
+		cx += 1;
+	} //left /right
 	
 
 	glutPostRedisplay();
