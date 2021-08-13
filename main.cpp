@@ -83,8 +83,9 @@ void theCube()
 	glEnd();
 	glColor3f(0.9, 0.1, 0.1);
 	glTranslatef(cx, cy, cz);
-	glutSolidCube(0.5);
+	glutSolidCube(0.7);
 	glPopMatrix();
+
 }
 
 void drawGrid()
@@ -121,7 +122,12 @@ void display()
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
 	glBegin(GL_POLYGON);
-
+    glBegin(GL_TRIANGLES);
+glColor3f(0.1, 0.2, 0.3);
+glVertex3f(0, 0, 0);
+glVertex3f(1, 0, 0);
+glVertex3f(0, 1, 0);
+glEnd();
 	drawGrid();
 	drawSign();
 	theCube();
@@ -146,7 +152,12 @@ void display()
 }
 
 void init()
-{
+{glBegin(GL_TRIANGLES);
+glColor3f(0.1, 0.2, 0.3);
+glVertex3f(0, 0, 0);
+glVertex3f(1, 0, 0);
+glVertex3f(0, 1, 0);
+glEnd();
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(35, 1.0f, 0.1f, 1000);
