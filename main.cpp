@@ -1,21 +1,19 @@
-//test
-
 #include <windows.h>
 #include <GL/glut.h>
 #include <time.h>
 #include <iostream>
 #include <fstream>
-#define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE  7849
+#define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE 7849
 #define XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE 8689
-#define XINPUT_GAMEPAD_TRIGGER_THRESHOLD    30
-#define Xbox_BtnA               Btn(0)
-#define Xbox_BtnB               Btn(1)
-#define Xbox_BtnX               Btn(2)
-#define Xbox_BtnY               Btn(3)
-#define Xbox_LB                 Btn(4)
-#define Xbox_RB                 Btn(5)
-#define Xbox_Back               Btn(6)
-#define Xbox_Start              Btn(7)
+#define XINPUT_GAMEPAD_TRIGGER_THRESHOLD 30
+#define Xbox_BtnA Btn(0)
+#define Xbox_BtnB Btn(1)
+#define Xbox_BtnX Btn(2)
+#define Xbox_BtnY Btn(3)
+#define Xbox_LB Btn(4)
+#define Xbox_RB Btn(5)
+#define Xbox_Back Btn(6)
+#define Xbox_Start Btn(7)
 using namespace std;
 
 int sum = 0;
@@ -25,7 +23,6 @@ int sn;
 int cx = 0, cy = 0, cz = 0;
 
 int initial_time = time(NULL), final_time, frame_count = 0;
-
 
 /*DWORD dwResult;    
 for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
@@ -47,30 +44,45 @@ for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
 }*/
 struct Sign
 {
-	int x1, y1, z1; 
+	int x1, y1, z1;
 	int state;
 	int total;
-};  Sign S[100];
+};
+Sign S[100];
 
 void addSign()
 {
-	S[0].state++; if(S[0].state>4) { S[0].state=1;}
-	int st=S[0].state;
-	
-	if(st==1) { S[0].total++; sn =S[0].total;}
-	if(st==1                     ){ S[sn] .x1=cx; S[sn].y1=cy; S[sn] .z1=cz;}
+	S[0].state++;
+	if (S[0].state > 4)
+	{
+		S[0].state = 1;
+	}
+	int st = S[0].state;
+
+	if (st == 1)
+	{
+		S[0].total++;
+		sn = S[0].total;
+	}
+	if (st == 1)
+	{
+		S[sn].x1 = cx;
+		S[sn].y1 = cy;
+		S[sn].z1 = cz;
+	}
 }
 
 void drawSign()
-{ int i;
-  for (i=1;i<S[0].total+1;i++)
-  {
-  	glBegin(GL_TRIANGLES);
-  	glColor3f(0.2, 0.5, 1);
-  	glVertex3f(S[i] .x1,S[i] .y1,S[i] .z1);
+{
+	int i;
+	for (i = 1; i < S[0].total + 1; i++)
+	{
+		glBegin(GL_TRIANGLES);
+		glColor3f(0.2, 0.5, 1);
+		glVertex3f(S[i].x1, S[i].y1, S[i].z1);
 
-  	glEnd();
-  }
+		glEnd();
+	}
 }
 void theCube()
 {
@@ -85,7 +97,6 @@ void theCube()
 	glTranslatef(cx, cy, cz);
 	glutSolidCube(0.7);
 	glPopMatrix();
-
 }
 
 void drawGrid()
@@ -122,12 +133,12 @@ void display()
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
 	glBegin(GL_POLYGON);
-    glBegin(GL_TRIANGLES);
-glColor3f(0.1, 0.2, 0.3);
-glVertex3f(0, 0, 0);
-glVertex3f(1, 0, 0);
-glVertex3f(0, 1, 0);
-glEnd();
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.1, 0.2, 0.3);
+	glVertex3f(0, 0, 0);
+	glVertex3f(1, 0, 0);
+	glVertex3f(0, 1, 0);
+	glEnd();
 	drawGrid();
 	drawSign();
 	theCube();
@@ -152,12 +163,13 @@ glEnd();
 }
 
 void init()
-{glBegin(GL_TRIANGLES);
-glColor3f(0.1, 0.2, 0.3);
-glVertex3f(0, 0, 0);
-glVertex3f(1, 0, 0);
-glVertex3f(0, 1, 0);
-glEnd();
+{
+	glBegin(GL_TRIANGLES);
+	glColor3f(0.1, 0.2, 0.3);
+	glVertex3f(0, 0, 0);
+	glVertex3f(1, 0, 0);
+	glVertex3f(0, 1, 0);
+	glEnd();
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	gluPerspective(35, 1.0f, 0.1f, 1000);
@@ -171,7 +183,8 @@ glEnd();
 
 void keyboard(unsigned char key, int x, int y)
 {
-	if(key=='h') {
+	if (key == 'h')
+	{
 		addSign();
 	}
 	if (key == 'w')
@@ -222,7 +235,6 @@ void keyboard(unsigned char key, int x, int y)
 	{
 		cx += 1;
 	} //left /right
-	
 
 	glutPostRedisplay();
 }
