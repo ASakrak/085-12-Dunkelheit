@@ -246,7 +246,7 @@ int main(int argc, char **argv)
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
-	glutCreateWindow("MasterLenxiOnDuty"); // Create a window with the given title
+	glutCreateWindow("MASTER LENXI ON DUTY TEST"); // Create a window with the given title
 										   // Set the window's initial width & height
 										   // Position the window's initial top-left corner
 
