@@ -187,6 +187,22 @@ void keyboard(unsigned char key, int x, int y)
 	{
 		addSign();
 	}
+	if (key == '8')
+	{
+		cz -= 1;
+	}
+	if (key == '2')
+	{
+		cz += 1;
+	} //forward / back
+	if (key == '4')
+	{
+		cx -= 1;
+	}
+	if (key == '6')
+	{
+		cx += 1;
+	}
 	if (key == 'w')
 	{
 		cz -= 1;
