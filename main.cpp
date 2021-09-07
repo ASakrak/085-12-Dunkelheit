@@ -14,6 +14,17 @@
 #define Xbox_RB Btn(5)
 #define Xbox_Back Btn(6)
 #define Xbox_Start Btn(7)
+#ifdef __APPLE__
+#ifdef TARGET_OS_MAC
+
+#include <osx.h>
+
+#endif
+#elif defined(_WIN32) || defined(_WIN64)
+
+#include <windows.h>
+
+#endif
 using namespace std;
 
 int sum = 0;
@@ -263,8 +274,8 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("MASTER LENXI ON DUTY TEST"); // Create a window with the given title
-										   // Set the window's initial width & height
-										   // Position the window's initial top-left corner
+												   // Set the window's initial width & height
+												   // Position the window's initial top-left corner
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
