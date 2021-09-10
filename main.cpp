@@ -261,8 +261,9 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 'Btn(3)')
 	{
 		cx += 1;
+		
 	} //left /right
-
+    //
 	glutPostRedisplay();
 }
 
