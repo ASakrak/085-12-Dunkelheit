@@ -101,12 +101,13 @@ void theCube()
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.5, 0.1);
 	glVertex3f(0, 0, 0);
-	glVertex3f(2, 0, 0);
-	glVertex3f(0, 3, 0);
+	glVertex3f(7, 0, 0);
+	glVertex3f(0, 7, 0);
 	glEnd();
 	glColor3f(0.9, 0.1, 0.1);
 	glTranslatef(cx, cy, cz);
-	glutSolidCube(0.7);
+	//glutSolidCube(0.2);
+	glutSolidSphere(1.31f,100,100);
 	glPopMatrix();
 }
 //>><<<<<<<<<<<<<<<
@@ -147,8 +148,8 @@ void display()
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.3);
 	glVertex3f(0, 0, 0);
-	glVertex3f(1, 0, 0);
-	glVertex3f(0, 1, 0);
+	glVertex3f(2, 0, 0);
+	glVertex3f(0, 2, 0);
 	glEnd();
 	drawGrid();
 	drawSign();
@@ -159,7 +160,7 @@ void display()
 	glEnd();
 
 	glVertex2f(0.0, 5.0);
-	glVertex2f(-4.0, -3.0);
+	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
 	glVertex2f(5.0, -2.0);
 
@@ -167,7 +168,7 @@ void display()
 	final_time = time(NULL);
 	if (final_time - initial_time > 0)
 	{
-		cout << "Fps : " << frame_count / (final_time - initial_time) << endl;
+		cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
 		frame_count = 0;
 		initial_time = final_time;
 	}
@@ -177,9 +178,9 @@ void init()
 {
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.3);
-	glVertex3f(0, 0, 0);
-	glVertex3f(4, 0, 0);
-	glVertex3f(0, 4, 0);
+	glVertex3f(0, 5, 0);
+	glVertex3f(5, 0, 0);
+	glVertex3f(0, 5, 0);
 	glEnd();
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
