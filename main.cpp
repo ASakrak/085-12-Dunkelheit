@@ -99,12 +99,12 @@ void theCube()
 {
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
-	glColor3f(0.1, 0.5, 0.1);
+	glColor3f(2.0f, 0.5f, 1.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(7, 0, 0);
 	glVertex3f(0, 7, 0);
 	glEnd();
-	glColor3f(0.9, 0.1, 0.1);
+	glColor3f(1.0f, 0.0f, 1.0f);
 	glTranslatef(cx, cy, cz);
 	//glutSolidCube(0.2);
 	glutSolidSphere(1.31f,100,100);
@@ -148,8 +148,12 @@ void display()
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.3);
 	glVertex3f(0, 0, 0);
-	glVertex3f(2, 0, 0);
-	glVertex3f(0, 2, 0);
+	glVertex3f(5, 0, 0);
+	glVertex3f(0, 5, 0);
+	glColor3f(0.4, 0.3, 0.3);
+	glVertex3f(0, 0, 0);
+	glVertex3f(4, 0, 0);
+	glVertex3f(0, 4, 0);
 	glEnd();
 	drawGrid();
 	drawSign();
