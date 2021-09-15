@@ -109,7 +109,7 @@ void theCube()
 	glutSolidCube(0.7);
 	glPopMatrix();
 }
-
+//>><<<<<<<<<<<<<<<
 void drawGrid()
 {
 	int i;
@@ -261,9 +261,9 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 'Btn(3)')
 	{
 		cx += 1;
-		
+
 	} //left /right
-    //
+	  //
 	glutPostRedisplay();
 }
 
@@ -275,8 +275,8 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("MASTER LENXI ON DUTY TEST (Master085-12)"); // Create a window with the given title
-												   // Set the window's initial width & height
-												   // Position the window's initial top-left corner
+																  // Set the window's initial width & height
+																  // Position the window's initial top-left corner
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
