@@ -178,8 +178,8 @@ void init()
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.3);
 	glVertex3f(0, 0, 0);
-	glVertex3f(1, 0, 0);
-	glVertex3f(0, 1, 0);
+	glVertex3f(4, 0, 0);
+	glVertex3f(0, 4, 0);
 	glEnd();
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
