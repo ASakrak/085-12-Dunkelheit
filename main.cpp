@@ -155,12 +155,12 @@ void display()
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-       /*glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
+       glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
        glBegin(GL_QUADS);
-               glVertex2f(-1.75, 1.75);
-               glVertex2f(-1.75, -1.75);
-               glVertex2f(10.75, -1.75);
-               glVertex2f(1.75, 1.75);*/
+               	glVertex2f(0.0, 5.0);
+	            glVertex2f(-1.0, -3.0);
+	            glVertex2f(4.0, -3.0);
+	            glVertex2f(5.0, -2.0);
 	glEnd();
 	drawGrid();
 	drawSign();
