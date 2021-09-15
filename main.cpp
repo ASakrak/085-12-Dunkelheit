@@ -100,13 +100,14 @@ void theCube()
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
 	glColor3f(2.0f, 0.5f, 1.0f);
+	glutSolidCube(0.4);
 	glVertex3f(0, 0, 0);
 	glVertex3f(7, 0, 0);
 	glVertex3f(0, 7, 0);
 	glEnd();
 	glColor3f(1.0f, 0.0f, 1.0f);
 	glTranslatef(cx, cy, cz);
-	//glutSolidCube(0.2);
+	
 	glutSolidSphere(1.31f,100,100);
 	glPopMatrix();
 }
@@ -154,6 +155,7 @@ void display()
 	glVertex3f(0, 0, 0);
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
+	glutSolidCube(0.5);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
        glBegin(GL_QUADS);
