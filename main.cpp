@@ -1,4 +1,6 @@
 #include <windows.h>
+#include <GL/gl.h>
+#include <GL/glu.h>
 #include <GL/glut.h>
 #include <time.h>
 #include <iostream>
@@ -32,7 +34,7 @@ int x;
 ifstream inFile;
 int sn;
 int cx = 0, cy = 0, cz = 0;
-
+GLuint texture;
 int initial_time = time(NULL), final_time, frame_count = 0;
 
 /*DWORD dwResult;    
@@ -53,6 +55,51 @@ for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
         // Controller is not connected
     }
 }*/
+GLuint LoadTexture (const char * filename, int width, int height ){
+
+//    GLuint texture;
+unsigned char * data;
+FILE * file;
+
+//The following code will read in our RAW file
+file = fopen( filename, "rb" );
+if ( file == NULL ) return 0;
+data = (unsigned char *)malloc( width * height * 3 );
+fread( data, width * height * 3, 1, file );
+fclose( file );
+
+glGenTextures( 1, &texture ); 
+glBindTexture( GL_TEXTURE_2D, texture ); 
+glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
+glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE ); 
+
+
+// select modulate to mix texture with color for shading
+glTexEnvf( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
+
+// when texture area is small, bilinear filter the closest mipmap
+glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER,
+                GL_LINEAR_MIPMAP_NEAREST );
+// when texture area is large, bilinear filter the first mipmap
+glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+
+//    // the texture wraps over at the edges (repeat)
+glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT );
+glTexParameterf( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT );
+
+// build our texture mipmaps
+gluBuild2DMipmaps( GL_TEXTURE_2D, 3, width, height,
+                  GL_RGB, GL_UNSIGNED_BYTE, data );
+
+free(data);
+
+return texture; //return whether it was successful
+
+}
+
+void FreeTexture( GLuint texture ){
+glDeleteTextures( 1, &texture );
+}
 struct Sign
 {
 	int x1, y1, z1;
@@ -156,6 +203,8 @@ void display()
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
 	glutSolidCube(0.5);
+	texture = LoadTexture( "C:/Users/bren/Pictures/New folder/background.jpg", 256, 256  );
+	glEnable( GL_TEXTURE_2D );
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
        glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
        glBegin(GL_QUADS);
