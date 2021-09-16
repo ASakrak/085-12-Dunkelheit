@@ -144,6 +144,8 @@ void drawSign()
 }
 void theCube()
 {
+	glEnable(GL_TEXTURE_2D);
+glBindTexture( GL_TEXTURE_2D, texture ); //bind the texture
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
 	glColor3f(2.0f, 0.5f, 1.0f);
@@ -216,6 +218,7 @@ void display()
 	drawGrid();
 	drawSign();
 	theCube();
+    FreeTexture( texture );
 	glutSwapBuffers();
 	glFlush();
 
