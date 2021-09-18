@@ -57,6 +57,7 @@ for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
         // Controller is not connected
     }
 }*/
+//this codes for add texture but its not running now
 GLuint LoadTexture(const char *filename, int width, int height)
 {
 
@@ -103,6 +104,7 @@ void FreeTexture(GLuint texture)
 {
 	glDeleteTextures(1, &texture);
 }
+//////////////////
 struct Sign
 {
 	int x1, y1, z1;
