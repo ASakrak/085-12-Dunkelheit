@@ -147,6 +147,7 @@ void drawSign()
 		glEnd();
 	}
 }
+//this code for cube and sphere
 void theCube()
 {
 	glEnable(GL_TEXTURE_2D);
