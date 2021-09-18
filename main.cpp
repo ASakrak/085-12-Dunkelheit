@@ -229,7 +229,7 @@ void display()
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
 	glVertex2f(5.0, -2.0);
-
+	//this codes for frame counter on console
 	frame_count++;
 	final_time = time(NULL);
 	if (final_time - initial_time > 0)
