@@ -31,7 +31,9 @@ using namespace std;
 
 int sum = 0;
 int x;
+//this code for open text file in console but its not running idk
 ifstream inFile;
+//
 int sn;
 int cx = 0, cy = 0, cz = 0;
 GLuint texture;
