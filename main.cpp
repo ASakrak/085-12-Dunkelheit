@@ -37,6 +37,7 @@ ifstream inFile;
 int sn;
 int cx = 0, cy = 0, cz = 0;
 GLuint texture;
+//this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
 
 /*DWORD dwResult;    
