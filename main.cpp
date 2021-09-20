@@ -152,6 +152,7 @@ void drawSign()
 //this code for cube and sphere
 void theCube()
 {
+	//i tried adding texture but its not running. i havent any idea for this codes idk LMAOOIO
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, texture); //bind the texture
 	glPushMatrix();
