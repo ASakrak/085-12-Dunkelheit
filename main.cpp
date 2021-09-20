@@ -213,7 +213,9 @@ void display()
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
 	glutSolidCube(0.5);
+	//this code not running but i'll fix(this code for image rendering)
 	texture = LoadTexture("C:/Users/bren/Pictures/New folder/background.jpg", 256, 256);
+	///////////////////////////////////////////
 	glEnable(GL_TEXTURE_2D);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
