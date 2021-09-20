@@ -136,6 +136,7 @@ void addSign()
 	}
 }
 
+//THIS CODES NOT RUNNING. I HAVENT ANY IDEA BUT I'LL FIX
 void drawSign()
 {
 	int i;
