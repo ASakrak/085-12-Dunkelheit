@@ -3,5 +3,6 @@ simple fps counter and opengl project.
 I used GL/glut.h library
 
 
-![Capture](https://user-images.githubusercontent.com/66999194/133490757-0b9b437b-9846-41c4-a918-2ba9135d95dd.PNG)
 
+
+![Ekran görüntüsü 2021-09-21 015548](https://user-images.githubusercontent.com/66999194/134087191-2c5795c2-10ac-4198-93b8-ec8e20a79fda.png)
