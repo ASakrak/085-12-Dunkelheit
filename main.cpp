@@ -113,7 +113,7 @@ struct Sign
 	int total;
 };
 Sign S[100];
-
+//this code adding sign to grid
 void addSign()
 {
 	S[0].state++;
