@@ -31,6 +31,7 @@ using namespace std;
 
 int sum = 0;
 int x;
+int  flag = COLOR_ACTIVECAPTION; 
 //this code for open text file in console but its not running idk
 ifstream inFile;
 //
@@ -218,6 +219,8 @@ void display()
 	//this code not running but i'll fix(this code for image rendering)
 	texture = LoadTexture("C:/Users/bren/Pictures/New folder/background.jpg", 256, 256);
 	///////////////////////////////////////////
+	COLORREF NewColor = RGB(255, 0, 0);
+	SetSysColors(1, &flag, &NewColor);
 	glEnable(GL_TEXTURE_2D);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
