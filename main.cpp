@@ -200,7 +200,17 @@ void drawGrid()
 
 void display()
 {
-    
+
+
+
+// make the color a deep blue hue  
+glClearColor(0.0F, 0.0F, 0.4F, 1.0F); 
+ 
+// make the shading smooth 
+glShadeModel(GL_SMOOTH); 
+ 
+// clear the color buffers  
+glClear(GL_COLOR_BUFFER_BIT); 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
