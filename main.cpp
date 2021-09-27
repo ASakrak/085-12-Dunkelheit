@@ -200,7 +200,7 @@ void drawGrid()
 
 void display()
 {
-    cout<<"";
+    
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
@@ -353,11 +353,12 @@ void keyboard(unsigned char key, int x, int y)
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
+	cout<<"ALPLHA 001 \n";
 	cout << "Welcome To My App / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
-	glutCreateWindow("MASTER LENXI ON DUTY TEST (Master085-12)"); // Create a window with the given title
+	glutCreateWindow("Alpha 001 (Master085-12)"); // Create a window with the given title
 																  // Set the window's initial width & height
 																  // Position the window's initial top-left corner
 
