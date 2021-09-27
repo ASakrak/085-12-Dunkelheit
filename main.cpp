@@ -165,7 +165,7 @@ void theCube()
 	glVertex3f(7, 0, 0);
 	glVertex3f(0, 7, 0);
 	glEnd();
-	glColor3f(1.0f, 0.0f, 1.0f);
+	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
 	//this code makeing circle/sphere
 	glutSolidSphere(1.31f, 100, 100);
@@ -189,7 +189,7 @@ void drawGrid()
 		}
 
 		glBegin(GL_LINES);
-		glColor3f(0.3, 0.1, 1);
+		glColor3f(0.7, 0.7, 1);
 		glLineWidth(1);
 		glVertex3f(0, -0.1, 0);
 		glVertex3f(19, -0.1, 0);
@@ -200,17 +200,12 @@ void drawGrid()
 
 void display()
 {
-
-
-
-// make the color a deep blue hue  
-glClearColor(0.0F, 0.0F, 0.4F, 1.0F); 
- 
-// make the shading smooth 
-glShadeModel(GL_SMOOTH); 
- 
-// clear the color buffers  
-glClear(GL_COLOR_BUFFER_BIT); 
+   // make the color a deep blue hue  
+   glClearColor(0.0F, 0.0F, 0.0F, 0.1F); 
+   // make the shading smooth 
+   glShadeModel(GL_SMOOTH); 
+    // clear the color buffers  
+    glClear(GL_COLOR_BUFFER_BIT); 
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
@@ -269,7 +264,7 @@ void init()
 {
 	
 	glBegin(GL_TRIANGLES);
-	glColor3f(0.1, 0.2, 0.3);
+	glColor3f(0.1, 0.2, 0.1);
 	glVertex3f(0, 5, 0);
 	glVertex3f(5, 0, 0);
 	glVertex3f(0, 5, 0);
@@ -363,12 +358,12 @@ void keyboard(unsigned char key, int x, int y)
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
-	cout<<"ALPLHA 001 \n";
-	cout << "Welcome To My App / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
+	cout<<"WELCOME TO MY TEST APP";
+	cout << "Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
-	glutCreateWindow("Alpha 001 (Master085-12)"); // Create a window with the given title
+	glutCreateWindow("Alpha (Master085-12)"); // Create a window with the given title
 																  // Set the window's initial width & height
 																  // Position the window's initial top-left corner
 
