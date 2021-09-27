@@ -3,6 +3,7 @@
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <time.h>
+#include <string.h>
 #include <iostream>
 #include <fstream>
 #define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE 7849
@@ -31,7 +32,7 @@ using namespace std;
 
 int sum = 0;
 int x;
-
+int w;
 //this code for open text file in console but its not running idk
 ifstream inFile;
 //
@@ -199,7 +200,7 @@ void drawGrid()
 
 void display()
 {
-
+    cout<<"";
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
@@ -256,6 +257,7 @@ void display()
 
 void init()
 {
+	
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.3);
 	glVertex3f(0, 5, 0);
