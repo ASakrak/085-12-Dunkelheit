@@ -2,6 +2,7 @@
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+#include "test.h"
 #include <time.h>
 #include <string.h>
 #include <iostream>
@@ -28,6 +29,7 @@
 #include <windows.h>
 
 #endif
+/**/
 using namespace std;
 
 int sum = 0;
@@ -200,12 +202,12 @@ void drawGrid()
 
 void display()
 {
-   // make the color a deep blue hue  
-   glClearColor(0.0F, 0.0F, 0.0F, 0.1F); 
-   // make the shading smooth 
-   glShadeModel(GL_SMOOTH); 
-    // clear the color buffers  
-    glClear(GL_COLOR_BUFFER_BIT); 
+	// make the color a deep blue hue
+	glClearColor(0.0F, 0.0F, 0.0F, 0.1F);
+	// make the shading smooth
+	glShadeModel(GL_SMOOTH);
+	// clear the color buffers
+	glClear(GL_COLOR_BUFFER_BIT);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
@@ -262,7 +264,7 @@ void display()
 
 void init()
 {
-	
+
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.1);
 	glVertex3f(0, 5, 0);
@@ -358,14 +360,14 @@ void keyboard(unsigned char key, int x, int y)
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
-	cout<<"WELCOME TO MY TEST APP";
+	cout << "WELCOME TO MY TEST APP";
 	cout << "Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("Alpha (Master085-12)"); // Create a window with the given title
-																  // Set the window's initial width & height
-																  // Position the window's initial top-left corner
+											  // Set the window's initial width & height
+											  // Position the window's initial top-left corner
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
