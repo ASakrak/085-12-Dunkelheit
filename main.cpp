@@ -365,7 +365,7 @@ int main(int argc, char **argv)
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_RGB);
 	glutInitWindowSize(1200, 800);
-	glutCreateWindow("Alpha (Master085-12)"); // Create a window with the given title
+	glutCreateWindow("Alpha 0.0.1"); // Create a window with the given title
 											  // Set the window's initial width & height
 											  // Position the window's initial top-left corner
 
