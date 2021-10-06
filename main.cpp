@@ -5,6 +5,7 @@
 #include "test.h"
 #include <time.h>
 #include <string.h>
+#include <math.h>
 #include <iostream>
 #include <fstream>
 #define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE 7849
@@ -18,6 +19,8 @@
 #define Xbox_RB Btn(5)
 #define Xbox_Back Btn(6)
 #define Xbox_Start Btn(7)
+#define PI 3.1415926535897; 
+
 #ifdef __APPLE__
 #ifdef TARGET_OS_MAC
 
@@ -35,6 +38,7 @@ using namespace std;
 int sum = 0;
 int x;
 int w;
+
 //this code for open text file in console but its not running idk
 ifstream inFile;
 //
@@ -43,7 +47,19 @@ int cx = 0, cy = 0, cz = 0;
 GLuint texture;
 //this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
+//test
 
+/*void yoda(){
+int i;
+GLint circle_points = 100; 
+glBegin(GL_LINE_LOOP); 
+for (i = 0; i < circle_points; i++) {    
+   angle = 2*PI*i/circle_points; 
+   glVertex2f(cos(angle), sin(angle)); 
+} 
+}*/
+
+//test
 /*DWORD dwResult;    
 for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
 {
@@ -161,6 +177,7 @@ void theCube()
 	glBindTexture(GL_TEXTURE_2D, texture); //bind the texture
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
+	glBegin(GL_QUAD_STRIP);
 	glColor3f(2.0f, 0.5f, 1.0f);
 	glutSolidCube(0.4);
 	glVertex3f(0, 0, 0);
