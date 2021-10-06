@@ -157,8 +157,8 @@ void drawSign()
 void theCube()
 {
 	//i tried adding texture but its not running. i havent any idea for this codes idk LMAOOIO
-	//glEnable(GL_TEXTURE_2D);
-	//glBindTexture(GL_TEXTURE_2D, texture); //bind the texture
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, texture); //bind the texture
 	glPushMatrix();
 	glBegin(GL_TRIANGLES);
 	glColor3f(2.0f, 0.5f, 1.0f);
