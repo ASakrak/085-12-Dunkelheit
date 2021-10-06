@@ -164,8 +164,8 @@ void theCube()
 	glColor3f(2.0f, 0.5f, 1.0f);
 	glutSolidCube(0.4);
 	glVertex3f(0, 0, 0);
-	glVertex3f(7, 0, 0);
-	glVertex3f(0, 7, 0);
+	glVertex3f(8, 0, 0);
+	glVertex3f(0, 8, 0);
 	glEnd();
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
