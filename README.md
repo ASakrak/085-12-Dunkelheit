@@ -1,4 +1,4 @@
-# Master085-12
+# 085-12-Dunkelheit
 simple fps counter and opengl project.
 I used GL/glut.h library
 
