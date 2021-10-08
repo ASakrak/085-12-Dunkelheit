@@ -17,7 +17,7 @@
 #define LEGAL_COPYRIGHT	""
 #define LEGAL_TRADEMARKS	""
 #define ORIGINAL_FILENAME	""
-#define PRODUCT_NAME	""
+#define PRODUCT_NAME	"085-12"
 #define PRODUCT_VERSION	"1.0.0.0"
 
 #endif /*MASTER085-12_PRIVATE_H*/
