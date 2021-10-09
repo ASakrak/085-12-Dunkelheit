@@ -1,7 +1,7 @@
 # 085-12-Dunkelheit
 
 - Simple fps counter and opengl project.
-- I used GL/glut.h library
+  I used GL/glut.h library
 
 - First of all I'm aware that the code is too complicated but I'm too busy to fix it. 
 I use this app just to have fun with cpp, I have no purpose just to enjoy and learn a few things.
