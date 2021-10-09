@@ -1,6 +1,6 @@
 [Project]
 FileName=Master085-12.dev
-Name=Master085-12
+Name=085-12-Dunkelheit
 Type=1
 Ver=2
 ObjFiles=
@@ -25,8 +25,8 @@ UseCustomMakefile=0
 CustomMakefile=
 CommandLine=
 Folders=
-IncludeVersionInfo=0
-SupportXPThemes=0
+IncludeVersionInfo=1
+SupportXPThemes=1
 CompilerSet=0
 CompilerSettings=0000000000000000000000000
 UnitCount=1
@@ -45,7 +45,7 @@ InternalName=
 LegalCopyright=
 LegalTrademarks=
 OriginalFilename=
-ProductName=
+ProductName=085-12
 ProductVersion=1.0.0.0
 AutoIncBuildNr=0
 SyncProduct=1
