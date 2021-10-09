@@ -1,6 +1,7 @@
 /*//////////////////////
 first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
 I use this app just to have fun with cpp, I have no purpose just to enjoy and learn a few things.
+By the way so many code not running i know.
 *//////////////////////
 #include <windows.h>
 #include <GL/gl.h>
@@ -23,6 +24,7 @@ I use this app just to have fun with cpp, I have no purpose just to enjoy and le
 #define Xbox_RB Btn(5)
 #define Xbox_Back Btn(6)
 #define Xbox_Start Btn(7)
+#include <cmath>
 #define PI 3.1415926535897; 
 
 #ifdef __APPLE__
@@ -42,7 +44,7 @@ using namespace std;
 int sum = 0;
 int x;
 int w;
-
+void timer(int);
 //this code for open text file in console but its not running idk
 ifstream inFile;
 //
@@ -102,6 +104,7 @@ void wireBox(GLdouble width, GLdouble height, GLdouble depth) {
   glutWireCube(1.0);
   glPopMatrix();
 }
+
 //this codes for add texture but its not running now
 GLuint LoadTexture(const char *filename, int width, int height)
 {
@@ -248,9 +251,47 @@ void drawGrid()
 		glPopMatrix();
 	}
 }
-
+class Orbiter {
+  double radius;
+  double u;
+public:
+  Orbiter(double radius): radius(radius), u(0.0) {}
+  void advance(double delta) {u += delta;}
+  void getPosition(double& x, double& y, double& z) {
+    x = radius * cos(u);
+    y = 0;
+    z = radius * sin(u);
+  }
+};
+static Orbiter orbiter(5.0);
+float x_position = -10.0;
+void timer(int v)
+{
+  
+  orbiter.advance(0.01);
+  glutTimerFunc(1000/60, timer, v);
+}
+/*class Camera {
+  double theta;      // determines the x and z positions
+  double y;          // the current y position
+  double dTheta;     // increment in theta for swinging the camera around
+  double dy;         // increment in y for moving the camera up/down
+public:
+  Camera(): theta(0), y(3), dTheta(0.04), dy(0.2) {}
+  double getX() {return 10 * cos(theta);}
+  double getY() {return y;}
+  double getZ() {return 10 * sin(theta);}
+  void moveRight() {theta += dTheta;}
+  void moveLeft() {theta -= dTheta;}
+  void moveUp() {y += dy;}
+  void moveDown() {if (y > dy) y -= dy;}
+};*/
 void display()
 {
+	glutTimerFunc(0,timer,0);
+	double x, y, z;
+    orbiter.getPosition(x, y, z);
+    gluLookAt(x, y, z, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	// make the color a deep blue hue
 	glClearColor(0.0F, 0.0F, 0.0F, 0.1F);
 	// make the shading smooth
@@ -268,6 +309,12 @@ void display()
     glTranslatef(1.0, 0.0, 0.0);
     wireBox(2.0, 0.4, 1.0);
     ///
+    //I'm trying make animation to sphere andd torus
+    glVertex2f(x_position,1.0);
+    glVertex2f(x_position,-1.0);
+    glVertex2f(x_position+2.0,-1.0);
+    glVertex2f(x_position+2.0,1.0);
+    //
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
@@ -324,10 +371,10 @@ void display()
 	}
 }
 void reshape(GLint w, GLint h) {
-  glViewport(0, 0, w, h);
+ glViewport(0, 0, w, h);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  gluPerspective(65.0, GLfloat(w)/GLfloat(h), 1.0, 20.0);
+  gluPerspective(40.0, GLfloat(w) / GLfloat(h), 1.0, 10.0);
 }
 void init()
 {
@@ -462,7 +509,7 @@ int main(int argc, char **argv)
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
-
+    glutTimerFunc(0,timer,0);
 	init();
 	// Register display callback handler for window re-paint
 	glutMainLoop();
