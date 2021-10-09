@@ -176,10 +176,10 @@ void theCube()
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, texture); //bind the texture
 	glPushMatrix();
-	glBegin(GL_TRIANGLES);
-	glBegin(GL_QUAD_STRIP);
-	glColor3f(2.0f, 0.5f, 1.0f);
-	glutSolidCube(0.4);
+	//glBegin(GL_TRIANGLES);
+	//glBegin(GL_QUAD_STRIP);
+	//glColor3f(2.0f, 0.5f, 1.0f);
+	//glutSolidCube(0.4);
 	glVertex3f(0, 0, 0);
 	glVertex3f(8, 0, 0);
 	glVertex3f(0, 8, 0);
@@ -187,13 +187,16 @@ void theCube()
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
 	//this code makeing circle/sphere
+	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
 	glutSolidSphere(1.31f, 100, 100);
 	//this code making torus
-	glutWireTorus(0.5, 3, 15, 30);
+	glColor4f(0.5f, 0.5f, 0.5f, 0.3f);
+	glutWireTorus(0.8, 3, 5, 90);
 	//cube here//
 	//glutSolidCube(5);
 	/////////////////
 	glPopMatrix();
+	glEnd();
 }
 //>><<<<<<<<<<<<<<<
 void drawGrid()
@@ -213,7 +216,7 @@ void drawGrid()
 		}
 
 		glBegin(GL_LINES);
-		glColor3f(0.7, 0.7, 1);
+		glColor4f(0.1f, 0.1f, 0.1f, 5.0f);
 		glLineWidth(1);
 		glVertex3f(0, -0.1, 0);
 		glVertex3f(19, -0.1, 0);
@@ -234,13 +237,13 @@ void display()
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
-	glBegin(GL_POLYGON);
-	glBegin(GL_TRIANGLES);
-	glColor3f(0.1, 0.2, 0.3);
+	//glBegin(GL_POLYGON);
+	//glBegin(GL_TRIANGLES);
+	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(5, 0, 0);
 	glVertex3f(0, 5, 0);
-	glColor3f(0.4, 0.3, 0.3);
+	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
@@ -253,8 +256,8 @@ void display()
 
 	glEnable(GL_TEXTURE_2D);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
-	glBegin(GL_QUADS);
+	///glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
+	//glBegin(GL_QUADS);
 	glVertex2f(0.0, 5.0);
 	glVertex2f(-1.0, -3.0);
 	glVertex2f(4.0, -3.0);
@@ -289,8 +292,26 @@ void display()
 
 void init()
 {
-	glBegin(GL_TRIANGLES);
-	glColor3f(0.1, 0.2, 0.1);
+    GLfloat black[] = { 0.0, 0.0, 0.0, 0.2 };
+    GLfloat yellow[] = { 0.1, 1.0, 0.0, 1.0 };
+    GLfloat cyan[] = { 0.1, 0.0, 0.2, 0.5 };
+    GLfloat white[] = { 1.0, 1.0, 1.0, 1.0 };
+    GLfloat direction[] = { 1.0, 1.0, 1.0, 1.0 };
+
+    glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, white);
+    glMaterialf(GL_FRONT, GL_SHININESS, 30);
+    
+	glLightfv(GL_LIGHT0, GL_AMBIENT, black);
+    glLightfv(GL_LIGHT0, GL_DIFFUSE, yellow);
+    glLightfv(GL_LIGHT0, GL_SPECULAR, white);
+    glLightfv(GL_LIGHT0, GL_POSITION, direction);
+    
+    glEnable(GL_LIGHTING);                // so the renderer considers light
+    glEnable(GL_LIGHT0);                  // turn LIGHT0 on
+    glEnable(GL_DEPTH_TEST); 
+	//glBegin(GL_TRIANGLES);
+	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 5, 0);
 	glVertex3f(5, 0, 0);
 	glVertex3f(0, 5, 0);
