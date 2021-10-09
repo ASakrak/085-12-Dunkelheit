@@ -1,3 +1,9 @@
+/*//////////////////////
+Sorry this repo
+first of all i'm sorry, this code is my fault it's too complicated but i'm so busy.
+I don't have time to fix it. 
+I use this app just to have fun with cpp, I have no purpose just to enjoy and learn a few things.
+*//////////////////////
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
@@ -78,6 +84,26 @@ for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
         // Controller is not connected
     }
 }*/
+static int shoulderAngle = 0, elbowAngle = 0;
+
+// Handles the keyboard event: the left and right arrows bend the elbow, the
+// up and down keys bend the shoulder.
+void special(int key, int, int) {
+  switch (key) {
+    case GLUT_KEY_LEFT: (elbowAngle += 5) %= 360; break;
+    case GLUT_KEY_RIGHT: (elbowAngle -= 5) %= 360; break;
+    case GLUT_KEY_UP: (shoulderAngle += 5) %= 360; break;
+    case GLUT_KEY_DOWN: (shoulderAngle -= 5) %= 360; break;
+    default: return;
+  }
+  glutPostRedisplay();
+}
+void wireBox(GLdouble width, GLdouble height, GLdouble depth) {
+  glPushMatrix();
+  glScalef(width, height, depth);
+  glutWireCube(1.0);
+  glPopMatrix();
+}
 //this codes for add texture but its not running now
 GLuint LoadTexture(const char *filename, int width, int height)
 {
@@ -232,8 +258,18 @@ void display()
 	// make the shading smooth
 	glShadeModel(GL_SMOOTH);
 	// clear the color buffers
-	glClear(GL_COLOR_BUFFER_BIT);
+	/////
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glMatrixMode(GL_MODELVIEW);
+    glPushMatrix();
+    glRotatef((GLfloat)shoulderAngle, 0.0, 0.0, 1.0);
+    glTranslatef(1.0, 0.0, 0.0);
+    wireBox(2.0, 0.4, 1.0);
+    glTranslatef(1.0, 0.0, 0.0);
+    glRotatef((GLfloat)elbowAngle, 0.0, 0.0, 1.0);
+    glTranslatef(1.0, 0.0, 0.0);
+    wireBox(2.0, 0.4, 1.0);
+    ///
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
@@ -289,18 +325,24 @@ void display()
 		initial_time = final_time;
 	}
 }
-
+void reshape(GLint w, GLint h) {
+  glViewport(0, 0, w, h);
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  gluPerspective(65.0, GLfloat(w)/GLfloat(h), 1.0, 20.0);
+}
 void init()
 {
+	//this codes for color
     GLfloat black[] = { 0.0, 0.0, 0.0, 0.2 };
     GLfloat yellow[] = { 0.1, 1.0, 0.0, 1.0 };
-    GLfloat cyan[] = { 0.1, 0.0, 0.2, 0.5 };
+    GLfloat cyan[] = { 0.1, 0.0, 0.3, 0.5 };
     GLfloat white[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat direction[] = { 1.0, 1.0, 1.0, 1.0 };
 
     glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
     glMaterialfv(GL_FRONT, GL_SPECULAR, white);
-    glMaterialf(GL_FRONT, GL_SHININESS, 30);
+    glMaterialf(GL_FRONT, GL_SHININESS, 25);
     
 	glLightfv(GL_LIGHT0, GL_AMBIENT, black);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, yellow);
@@ -310,8 +352,14 @@ void init()
     glEnable(GL_LIGHTING);                // so the renderer considers light
     glEnable(GL_LIGHT0);                  // turn LIGHT0 on
     glEnable(GL_DEPTH_TEST); 
+    ///
 	//glBegin(GL_TRIANGLES);
 	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
+	glShadeModel(GL_FLAT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    gluLookAt(1,2,8, 0,0,0, 0,1,0);
+    ///
 	glVertex3f(0, 5, 0);
 	glVertex3f(5, 0, 0);
 	glVertex3f(0, 5, 0);
