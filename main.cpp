@@ -1,7 +1,5 @@
 /*//////////////////////
-Sorry this repo
-first of all i'm sorry, this code is my fault it's too complicated but i'm so busy.
-I don't have time to fix it. 
+first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
 I use this app just to have fun with cpp, I have no purpose just to enjoy and learn a few things.
 *//////////////////////
 #include <windows.h>
