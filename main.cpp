@@ -188,6 +188,8 @@ void theCube()
 	glTranslatef(cx, cy, cz);
 	//this code makeing circle/sphere
 	glutSolidSphere(1.31f, 100, 100);
+	//this code making torus
+	glutWireTorus(0.5, 3, 15, 30);
 	//cube here//
 	//glutSolidCube(5);
 	/////////////////
@@ -243,7 +245,8 @@ void display()
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
 	//this code making cube//
-	glutSolidCube(0.5);
+	//glutSolidCube(0.5);
+	
 	//this code not running but i'll fix(this code for image rendering)
 	texture = LoadTexture("C:/Users/bren/Pictures/New folder/background.jpg", 256, 256);
 	///////////////////////////////////////////
@@ -266,6 +269,8 @@ void display()
 
 	glEnd();
 
+
+
 	glVertex2f(0.0, 5.0);
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
@@ -284,7 +289,6 @@ void display()
 
 void init()
 {
-
 	glBegin(GL_TRIANGLES);
 	glColor3f(0.1, 0.2, 0.1);
 	glVertex3f(0, 5, 0);
@@ -383,7 +387,7 @@ int main(int argc, char **argv)
 	cout << "WELCOME TO MY TEST APP";
 	cout << "Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
 	glutInit(&argc, argv); // Initialize GLUT
-	glutInitDisplayMode(GLUT_RGB);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("Alpha 0.0.1"); // Create a window with the given title
 											  // Set the window's initial width & height
