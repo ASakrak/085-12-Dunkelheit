@@ -1,13 +1,14 @@
 # 085-12-Dunkelheit
-*simple fps counter and opengl project.
-*I used GL/glut.h library
 
-*first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
-I use this app just to have fun with cpp, I have no purpose just to enjoy and learn a few things.
+-simple fps counter and opengl project.
+-I used GL/glut.h library
+
+-first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
+-I use this app just to have fun with cpp, I have no purpose just to enjoy and learn a few things.
 
 
 
-By the way so many code not running i know.
+-By the way so many code not running i know.
 
 
 
