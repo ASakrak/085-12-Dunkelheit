@@ -195,6 +195,20 @@ void drawSign()
 
 		glEnd();
 	}
+
+}
+void reshape(GLint w, GLint h) {
+  glViewport(0, 0, w, h);
+  glMatrixMode(GL_PROJECTION);
+  GLfloat aspect = GLfloat(w) / GLfloat(h);
+  glLoadIdentity();
+  if (w <= h) {
+    // width is smaller, so stretch out the height
+    glOrtho(-2.5, 2.5, -2.5/aspect, 2.5/aspect, -10.0, 10.0);
+  } else {
+    // height is smaller, so stretch out the width
+    glOrtho(-2.5*aspect, 2.5*aspect, -2.5, 2.5, -10.0, 10.0);
+  }
 }
 //this code for cube and sphere
 void theCube()
@@ -213,17 +227,37 @@ void theCube()
 	glEnd();
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
+    glRotatef(-20.0, 1.0, 0.0, 0.0);
+///////////////////////////////////////////
+
+//this lines mine ufo desing test are LOL
+    glPushMatrix();
+    glTranslatef(-0.75, 0.5, 0.0);
+    glRotatef(120.0, 1.0, 0.0, 0.0);
+    glutSolidTorus(1.175, 1.85, 100, 60);
+    glTranslatef(-0.10, 0.5, -0.8);
+    glRotatef(270.0, 1.0, 0.0, 0.0);
+    // Add a sphere to the scene.
+    glTranslatef(-0.10, 0.5, 0.0);
+    //glRotatef(270.0, 1.0, 0.0, 0.0);
+    glutSolidSphere(1.900, 30, 50);
+    //glutSolidSphere(1.570, 30, 30);
+    glPopMatrix();
+
+
+///////////////////////////////////////////
 	//this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
-	glutSolidSphere(1.31f, 100, 100);
+	//glutSolidSphere(1.31f, 100, 100);
 	//this code making torus
 	glColor4f(0.5f, 0.5f, 0.5f, 0.3f);
-	glutWireTorus(0.8, 3, 5, 90);
+	//glutWireTorus(0.8, 3, 5, 90);
 	//cube here//
 	//glutSolidCube(5);
 	/////////////////
 	glPopMatrix();
 	glEnd();
+	glFlush();
 }
 //>><<<<<<<<<<<<<<<
 void drawGrid()
@@ -242,8 +276,8 @@ void drawGrid()
 			glRotatef(-90, 0, 1, 0);
 		}
 
-		glBegin(GL_LINES);
-		glColor4f(0.1f, 0.1f, 0.1f, 5.0f);
+		glBegin(GL_LINE_LOOP);
+		glColor4f(2.1f, 1.1f, 0.1f, 5.0f);
 		glLineWidth(1);
 		glVertex3f(0, -0.1, 0);
 		glVertex3f(19, -0.1, 0);
@@ -314,7 +348,7 @@ void display()
     glVertex2f(x_position,-1.0);
     glVertex2f(x_position+2.0,-1.0);
     glVertex2f(x_position+2.0,1.0);
-    //
+
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(29, 1, 1, 0);
@@ -370,18 +404,13 @@ void display()
 		initial_time = final_time;
 	}
 }
-void reshape(GLint w, GLint h) {
- glViewport(0, 0, w, h);
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
-  gluPerspective(40.0, GLfloat(w) / GLfloat(h), 1.0, 10.0);
-}
+
 void init()
 {
 	//this codes for color
     GLfloat black[] = { 0.0, 0.0, 0.0, 0.2 };
-    GLfloat yellow[] = { 0.1, 1.0, 0.0, 1.0 };
-    GLfloat cyan[] = { 0.1, 0.0, 0.3, 0.5 };
+    GLfloat yellow[] = { 1.0, 1.0, 0.8, 1.0 };
+    GLfloat cyan[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat white[] = { 1.0, 1.0, 1.0, 1.0 };
     GLfloat direction[] = { 1.0, 1.0, 1.0, 1.0 };
 
@@ -501,7 +530,7 @@ int main(int argc, char **argv)
 	cout << "WELCOME TO MY TEST APP";
 	cout << "Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
 	glutInit(&argc, argv); // Initialize GLUT
-	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+	  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("Alpha 0.0.1"); // Create a window with the given title
 											  // Set the window's initial width & height
@@ -509,6 +538,8 @@ int main(int argc, char **argv)
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
+
+
     glutTimerFunc(0,timer,0);
 	init();
 	// Register display callback handler for window re-paint
