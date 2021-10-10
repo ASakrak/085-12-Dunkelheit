@@ -527,8 +527,9 @@ void keyboard(unsigned char key, int x, int y)
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
-	cout << "WELCOME TO MY TEST APP";
-	cout << "Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju \n";
+	system("color 06");
+	cout << "PLANNED CHANGES: I'M TRYING MAKE UFO DESING LMAOOO \n";
+	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";
 	glutInit(&argc, argv); // Initialize GLUT
 	  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 800);
