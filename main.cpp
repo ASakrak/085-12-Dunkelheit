@@ -237,14 +237,31 @@ void theCube()
     glutSolidTorus(1.175, 1.85, 100, 60);
     glTranslatef(-0.10, 0.5, -0.8);
     glRotatef(270.0, 1.0, 0.0, 0.0);
+    
+    //s
+    
     // Add a sphere to the scene.
     glTranslatef(-0.10, 0.5, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
     glutSolidSphere(1.900, 30, 50);
     //glutSolidSphere(1.570, 30, 30);
+   
+    //x,y,z
+    glPushMatrix();
+    /////////////x      y    z
+    glTranslatef(-0.5, 0.5, 3.4);
+    glRotatef(270.0, 0.5, 0.0, 0.0);
+    //glRotatef(270.0, 1.0, 0.0, 0.0);
+    glutSolidSphere(0.150, 30, 50);
+    
+    
+    
+    /////////////x      y    z
+    glTranslatef(-0.8, 0.4, 3.9);
+    glRotatef(270.0, 0.5, 0.0, 0.0);
+    //glRotatef(270.0, 1.0, 0.0, 0.0);
+    glutSolidSphere(0.150, 30, 50);
     glPopMatrix();
-
-
 ///////////////////////////////////////////
 	//this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
