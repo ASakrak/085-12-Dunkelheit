@@ -228,8 +228,12 @@ void theCube()
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
     glRotatef(-20.0, 1.0, 0.0, 0.0);
+    /*/teapot
+    glutWireTeapot(1.0);
+    glTranslatef(-1.75, 0.5, 0.0);
+    //*/
 ///////////////////////////////////////////
-
+//
 //this lines mine ufo desing test are LOL
     glPushMatrix();
     glTranslatef(-0.75, 0.5, 0.0);
@@ -257,7 +261,7 @@ void theCube()
     
     
     /////////////x      y    z
-    glTranslatef(-0.8, 0.2, 3.9);
+    glTranslatef(-0.7, 0.5, 3.9);
     glRotatef(270.0, 0.5, 0.0, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
     glutSolidSphere(0.150, 30, 50);
