@@ -253,7 +253,7 @@ void theCube()
     //x,y,z
     glPushMatrix();
     /////////////x      y    z
-    glTranslatef(-0.5, 0.5, 3.4);
+    /*glTranslatef(-0.5, 0.5, 3.4);
     glRotatef(270.0, 0.5, 0.0, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
     glutSolidSphere(0.150, 30, 50);
@@ -261,11 +261,19 @@ void theCube()
     
     
     /////////////x      y    z
-    glTranslatef(-0.8, 0.5, 3.9);
+    glTranslatef(-1.0, 0.1, 0.2);
     glRotatef(270.0, 0.5, 0.0, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
     glutSolidSphere(0.150, 30, 50);
+    
+    
+    //////////////
+    glTranslatef(-0.7, -0.5, 0.2);
+    glRotatef(270.0, 0.5, 0.0, 0.0);
+    //glRotatef(270.0, 1.0, 0.0, 0.0);
+    */glutSolidSphere(0.150, 30, 50);
     glPopMatrix();
+    
 ///////////////////////////////////////////
 	//this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
