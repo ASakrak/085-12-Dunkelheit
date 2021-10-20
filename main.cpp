@@ -261,7 +261,7 @@ void theCube()
     
     
     /////////////x      y    z
-    glTranslatef(-0.7, 0.5, 3.9);
+    glTranslatef(-0.8, 0.5, 3.9);
     glRotatef(270.0, 0.5, 0.0, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
     glutSolidSphere(0.150, 30, 50);
