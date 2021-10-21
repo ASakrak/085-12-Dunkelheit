@@ -2,7 +2,8 @@
 first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
 I use this app just to have fun with cpp, I have purpose just to enjoy and learn a few things.
 By the way so many code not running i know.
-*//////////////////////
+*/
+/////////////////////
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
@@ -25,7 +26,7 @@ By the way so many code not running i know.
 #define Xbox_Back Btn(6)
 #define Xbox_Start Btn(7)
 #include <cmath>
-#define PI 3.1415926535897; 
+#define PI 3.1415926535897;
 
 #ifdef __APPLE__
 #ifdef TARGET_OS_MAC
@@ -88,21 +89,33 @@ static int shoulderAngle = 0, elbowAngle = 0;
 
 // Handles the keyboard event: the left and right arrows bend the elbow, the
 // up and down keys bend the shoulder.
-void special(int key, int, int) {
-  switch (key) {
-    case GLUT_KEY_LEFT: (elbowAngle += 5) %= 360; break;
-    case GLUT_KEY_RIGHT: (elbowAngle -= 5) %= 360; break;
-    case GLUT_KEY_UP: (shoulderAngle += 5) %= 360; break;
-    case GLUT_KEY_DOWN: (shoulderAngle -= 5) %= 360; break;
-    default: return;
-  }
-  glutPostRedisplay();
+void special(int key, int, int)
+{
+	switch (key)
+	{
+	case GLUT_KEY_LEFT:
+		(elbowAngle += 5) %= 360;
+		break;
+	case GLUT_KEY_RIGHT:
+		(elbowAngle -= 5) %= 360;
+		break;
+	case GLUT_KEY_UP:
+		(shoulderAngle += 5) %= 360;
+		break;
+	case GLUT_KEY_DOWN:
+		(shoulderAngle -= 5) %= 360;
+		break;
+	default:
+		return;
+	}
+	glutPostRedisplay();
 }
-void wireBox(GLdouble width, GLdouble height, GLdouble depth) {
-  glPushMatrix();
-  glScalef(width, height, depth);
-  glutWireCube(1.0);
-  glPopMatrix();
+void wireBox(GLdouble width, GLdouble height, GLdouble depth)
+{
+	glPushMatrix();
+	glScalef(width, height, depth);
+	glutWireCube(1.0);
+	glPopMatrix();
 }
 
 //this codes for add texture but its not running now
@@ -195,20 +208,23 @@ void drawSign()
 
 		glEnd();
 	}
-
 }
-void reshape(GLint w, GLint h) {
-  glViewport(0, 0, w, h);
-  glMatrixMode(GL_PROJECTION);
-  GLfloat aspect = GLfloat(w) / GLfloat(h);
-  glLoadIdentity();
-  if (w <= h) {
-    // width is smaller, so stretch out the height
-    glOrtho(-2.5, 2.5, -2.5/aspect, 2.5/aspect, -10.0, 10.0);
-  } else {
-    // height is smaller, so stretch out the width
-    glOrtho(-2.5*aspect, 2.5*aspect, -2.5, 2.5, -10.0, 10.0);
-  }
+void reshape(GLint w, GLint h)
+{
+	glViewport(0, 0, w, h);
+	glMatrixMode(GL_PROJECTION);
+	GLfloat aspect = GLfloat(w) / GLfloat(h);
+	glLoadIdentity();
+	if (w <= h)
+	{
+		// width is smaller, so stretch out the height
+		glOrtho(-2.5, 2.5, -2.5 / aspect, 2.5 / aspect, -10.0, 10.0);
+	}
+	else
+	{
+		// height is smaller, so stretch out the width
+		glOrtho(-2.5 * aspect, 2.5 * aspect, -2.5, 2.5, -10.0, 10.0);
+	}
 }
 //this code for cube and sphere
 void theCube()
@@ -227,33 +243,33 @@ void theCube()
 	glEnd();
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
-    glRotatef(-20.0, 1.0, 0.0, 0.0);
-    /*/teapot
+	glRotatef(-20.0, 1.0, 0.0, 0.0);
+	/*/teapot
     glutWireTeapot(1.0);
     glTranslatef(-1.75, 0.5, 0.0);
     //*/
-///////////////////////////////////////////
-//
-//this lines mine ufo desing test are LOL
-    glPushMatrix();
-    glTranslatef(-0.75, 0.5, 0.0);
-    glRotatef(120.0, 1.0, 0.0, 0.0);
-    glutSolidTorus(1.175, 1.85, 100, 60);
-    glTranslatef(-0.10, 0.5, -0.8);
-    glRotatef(270.0, 1.0, 0.0, 0.0);
-    
-    //s
-    
-    // Add a sphere to the scene.
-    glTranslatef(-0.10, 0.5, 0.0);
-    //glRotatef(270.0, 1.0, 0.0, 0.0);
-    glutSolidSphere(1.900, 30, 50);
-    //glutSolidSphere(1.570, 30, 30);
-   
-    //x,y,z
-    glPushMatrix();
-    /////////////x      y    z
-    /*glTranslatef(-0.5, 0.5, 3.4);
+	///////////////////////////////////////////
+	//
+	//this lines mine ufo desing test are LOL
+	glPushMatrix();
+	glTranslatef(-0.75, 0.5, 0.0);
+	glRotatef(120.0, 1.0, 0.0, 0.0);
+	glutSolidTorus(1.175, 1.85, 100, 60);
+	glTranslatef(-0.10, 0.5, -0.8);
+	glRotatef(270.0, 1.0, 0.0, 0.0);
+
+	//s
+
+	// Add a sphere to the scene.
+	glTranslatef(-0.10, 0.5, 0.0);
+	//glRotatef(270.0, 1.0, 0.0, 0.0);
+	glutSolidSphere(1.900, 30, 50);
+	//glutSolidSphere(1.570, 30, 30);
+
+	//x,y,z
+	glPushMatrix();
+	/////////////x      y    z
+	/*glTranslatef(-0.5, 0.5, 3.4);
     glRotatef(270.0, 0.5, 0.0, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
     glutSolidSphere(0.150, 30, 50);
@@ -271,10 +287,11 @@ void theCube()
     glTranslatef(-0.7, -0.5, 0.2);
     glRotatef(270.0, 0.5, 0.0, 0.0);
     //glRotatef(270.0, 1.0, 0.0, 0.0);
-    */glutSolidSphere(0.150, 30, 50);
-    glPopMatrix();
-    
-///////////////////////////////////////////
+    */
+	glutSolidSphere(0.150, 30, 50);
+	glPopMatrix();
+
+	///////////////////////////////////////////
 	//this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
 	//glutSolidSphere(1.31f, 100, 100);
@@ -314,25 +331,28 @@ void drawGrid()
 		glPopMatrix();
 	}
 }
-class Orbiter {
-  double radius;
-  double u;
+class Orbiter
+{
+	double radius;
+	double u;
+
 public:
-  Orbiter(double radius): radius(radius), u(0.0) {}
-  void advance(double delta) {u += delta;}
-  void getPosition(double& x, double& y, double& z) {
-    x = radius * cos(u);
-    y = 0;
-    z = radius * sin(u);
-  }
+	Orbiter(double radius) : radius(radius), u(0.0) {}
+	void advance(double delta) { u += delta; }
+	void getPosition(double &x, double &y, double &z)
+	{
+		x = radius * cos(u);
+		y = 0;
+		z = radius * sin(u);
+	}
 };
 static Orbiter orbiter(5.0);
 float x_position = -10.0;
 void timer(int v)
 {
-  
-  orbiter.advance(0.01);
-  glutTimerFunc(1000/60, timer, v);
+
+	orbiter.advance(0.01);
+	glutTimerFunc(1000 / 60, timer, v);
 }
 /*class Camera {
   double theta;      // determines the x and z positions
@@ -351,10 +371,10 @@ public:
 };*/
 void display()
 {
-	glutTimerFunc(0,timer,0);
+	glutTimerFunc(0, timer, 0);
 	double x, y, z;
-    orbiter.getPosition(x, y, z);
-    gluLookAt(x, y, z, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	orbiter.getPosition(x, y, z);
+	gluLookAt(x, y, z, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
 	// make the color a deep blue hue
 	glClearColor(0.0F, 0.0F, 0.0F, 0.1F);
 	// make the shading smooth
@@ -363,20 +383,20 @@ void display()
 	/////
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
-    glPushMatrix();
-    glRotatef((GLfloat)shoulderAngle, 0.0, 0.0, 1.0);
-    glTranslatef(1.0, 0.0, 0.0);
-    wireBox(2.0, 0.4, 1.0);
-    glTranslatef(1.0, 0.0, 0.0);
-    glRotatef((GLfloat)elbowAngle, 0.0, 0.0, 1.0);
-    glTranslatef(1.0, 0.0, 0.0);
-    wireBox(2.0, 0.4, 1.0);
-    ///
-    //I'm trying make animation to sphere andd torus
-    glVertex2f(x_position,1.0);
-    glVertex2f(x_position,-1.0);
-    glVertex2f(x_position+2.0,-1.0);
-    glVertex2f(x_position+2.0,1.0);
+	glPushMatrix();
+	glRotatef((GLfloat)shoulderAngle, 0.0, 0.0, 1.0);
+	glTranslatef(1.0, 0.0, 0.0);
+	wireBox(2.0, 0.4, 1.0);
+	glTranslatef(1.0, 0.0, 0.0);
+	glRotatef((GLfloat)elbowAngle, 0.0, 0.0, 1.0);
+	glTranslatef(1.0, 0.0, 0.0);
+	wireBox(2.0, 0.4, 1.0);
+	///
+	//I'm trying make animation to sphere andd torus
+	glVertex2f(x_position, 1.0);
+	glVertex2f(x_position, -1.0);
+	glVertex2f(x_position + 2.0, -1.0);
+	glVertex2f(x_position + 2.0, 1.0);
 
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
@@ -393,7 +413,7 @@ void display()
 	glVertex3f(0, 4, 0);
 	//this code making cube//
 	//glutSolidCube(0.5);
-	
+
 	//this code not running but i'll fix(this code for image rendering)
 	texture = LoadTexture("C:/Users/bren/Pictures/New folder/background.jpg", 256, 256);
 	///////////////////////////////////////////
@@ -416,8 +436,6 @@ void display()
 
 	glEnd();
 
-
-
 	glVertex2f(0.0, 5.0);
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
@@ -437,32 +455,32 @@ void display()
 void init()
 {
 	//this codes for color
-    GLfloat black[] = { 0.0, 0.0, 0.0, 0.2 };
-    GLfloat yellow[] = { 1.0, 1.0, 0.8, 1.0 };
-    GLfloat cyan[] = { 1.0, 1.0, 1.0, 1.0 };
-    GLfloat white[] = { 1.0, 1.0, 1.0, 1.0 };
-    GLfloat direction[] = { 1.0, 1.0, 1.0, 1.0 };
+	GLfloat black[] = {0.0, 0.0, 0.0, 0.2};
+	GLfloat yellow[] = {1.0, 1.0, 0.8, 1.0};
+	GLfloat cyan[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
 
-    glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
-    glMaterialfv(GL_FRONT, GL_SPECULAR, white);
-    glMaterialf(GL_FRONT, GL_SHININESS, 25);
-    
+	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
+	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
+	glMaterialf(GL_FRONT, GL_SHININESS, 25);
+
 	glLightfv(GL_LIGHT0, GL_AMBIENT, black);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, yellow);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, white);
-    glLightfv(GL_LIGHT0, GL_POSITION, direction);
-    
-    glEnable(GL_LIGHTING);                // so the renderer considers light
-    glEnable(GL_LIGHT0);                  // turn LIGHT0 on
-    glEnable(GL_DEPTH_TEST); 
-    ///
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, yellow);
+	glLightfv(GL_LIGHT0, GL_SPECULAR, white);
+	glLightfv(GL_LIGHT0, GL_POSITION, direction);
+
+	glEnable(GL_LIGHTING); // so the renderer considers light
+	glEnable(GL_LIGHT0);   // turn LIGHT0 on
+	glEnable(GL_DEPTH_TEST);
+	///
 	//glBegin(GL_TRIANGLES);
 	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glShadeModel(GL_FLAT);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    gluLookAt(1,2,8, 0,0,0, 0,1,0);
-    ///
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	gluLookAt(1, 2, 8, 0, 0, 0, 0, 1, 0);
+	///
 	glVertex3f(0, 5, 0);
 	glVertex3f(5, 0, 0);
 	glVertex3f(0, 5, 0);
@@ -557,20 +575,19 @@ void keyboard(unsigned char key, int x, int y)
 int main(int argc, char **argv)
 {
 	system("color 06");
-	cout << "PLANNED CHANGES: I'M TRYING MAKE UFO DESING LMAOOO \n";
-	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";
+	/*cout << "PLANNED CHANGES: I'M TRYING MAKE UFO DESING LMAOOO \n";
+	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";*/
 	glutInit(&argc, argv); // Initialize GLUT
-	  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("Alpha 0.0.1"); // Create a window with the given title
-											  // Set the window's initial width & height
-											  // Position the window's initial top-left corner
+									 // Set the window's initial width & height
+									 // Position the window's initial top-left corner
 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
 
-
-    glutTimerFunc(0,timer,0);
+	glutTimerFunc(0, timer, 0);
 	init();
 	// Register display callback handler for window re-paint
 	glutMainLoop();
