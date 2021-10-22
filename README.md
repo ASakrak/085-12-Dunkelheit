@@ -5,7 +5,7 @@
 - There is more details at the bottom of the page.
 - By the way you need opengl for launch this application.
 
-# How Can I Download On Linux
+# How Can I Download On Linux?
 - First of all, I have no idea to download on linux, but I found some codes on Google, maybe I helped you a little bit.
 
   ```sudo apt-get install freeglut3 freeglut3-dev libglew-dev```
@@ -16,6 +16,8 @@
 - I'm using windows and i used this page for downloading.
 *  http://freeglut.sourceforge.net/
 - My IDE is Dev-C++.
+
+
 
 
 
