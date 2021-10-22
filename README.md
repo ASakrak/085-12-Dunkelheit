@@ -5,7 +5,7 @@
 - There is more details at the bottom of the page.
 - By the way you need opengl for launch this application.
 
-# How Can I Download On Linux
+# How Can I Download On Linux?
 - First of all, I have no idea to download on linux, but I found some codes on Google, maybe I helped you a little bit.
 
   ```sudo apt-get install freeglut3 freeglut3-dev libglew-dev```
@@ -16,6 +16,23 @@
 - I'm using windows and i used this page for downloading.
 *  http://freeglut.sourceforge.net/
 - My IDE is Dev-C++.
+## How Can I Clone a Repository on Windows?
+- It's very basic method for download.
+- Go 085-12 Dunkelheit github page and press code button.
+- there is a Download Zip option in code button use it.
+
+
+## How Can I Clone a Repository on Windows With Git?
+- If you don't know how to clone a repository you need download git.
+
+- Can check if you have git with this code.
+
+  ```git --version```
+  
+- It's clone code
+
+  ```https://github.com/ASakrak/085-12-Dunkelheit.git```
+
 
 
 
