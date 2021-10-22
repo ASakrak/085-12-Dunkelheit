@@ -16,22 +16,7 @@
 - I'm using windows and i used this page for downloading.
 *  http://freeglut.sourceforge.net/
 - My IDE is Dev-C++.
-## How Can I Clone a Repository on Windows?
-- It's very basic method for download.
-- Go 085-12 Dunkelheit github page and press code button.
-- there is a Download Zip option in code button use it.
 
-
-## How Can I Clone a Repository on Windows With Git?
-- If you don't know how to clone a repository you need download git.
-
-- Can check if you have git with this code.
-
-  ```git --version```
-  
-- It's clone code
-
-  ```git clone https://github.com/ASakrak/085-12-Dunkelheit.git```
 
 
 
