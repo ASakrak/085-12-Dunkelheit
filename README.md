@@ -15,7 +15,7 @@
 # Download On Windows
 - I'm using windows and i used this page for downloading.
 - My IDE is Dev-C++
-  http://freeglut.sourceforge.net/
+*  http://freeglut.sourceforge.net/
 
 
 # 085-12 Dunkelheit Images
