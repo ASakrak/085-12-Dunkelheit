@@ -1,9 +1,5 @@
 # 085-12-Dunkelheit
-# About
-- Simple fps counter and opengl project.
-  I used GL/glut.h library.
-- There is more details at the bottom of the page.
-- By the way you need opengl for launch this application.
+
 
 # How Can I Download On Linux?
 - First of all, I have no idea to download on linux, but I found some codes on Google, maybe I helped you a little bit.
@@ -28,6 +24,8 @@
 
   
 # About Codes
+- Simple fps counter and opengl project.
+  I used GL/glut.h library.
 - I'm aware that the code is too complicated but I'm too busy to fix it. 
 - I'm coding this app just to have fun with cpp and learn a few things.
 - By the way so many code not running i know.
