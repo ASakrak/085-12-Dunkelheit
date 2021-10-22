@@ -31,7 +31,7 @@
   
 - It's clone code
 
-  ```https://github.com/ASakrak/085-12-Dunkelheit.git```
+  ```git clone https://github.com/ASakrak/085-12-Dunkelheit.git```
 
 
 
