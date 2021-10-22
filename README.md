@@ -11,7 +11,7 @@
 # Download On Windows
 - I'm using windows and i used this page for downloading.
 *  http://freeglut.sourceforge.net/
-- My IDE is Dev-C++.
+
 
 
 
