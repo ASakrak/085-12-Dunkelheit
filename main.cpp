@@ -20,7 +20,7 @@ By the way so many code not running i know.
 #define Xbox_BtnA Btn(0)
 #define Xbox_BtnB Btn(1)
 #define Xbox_BtnX Btn(2)
-#define Xbox_BtnY Btn(3) 
+#define Xbox_BtnY Btn(3)
 #define Xbox_LB Btn(4)
 #define Xbox_RB Btn(5)
 #define Xbox_Back Btn(6)
