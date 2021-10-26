@@ -173,7 +173,7 @@ struct Sign
 	int total;
 };
 Sign S[100];
-//this code adding sign to grid
+//this code adding sign to grid but now its not running.
 void addSign()
 {
 	S[0].state++;
@@ -270,24 +270,21 @@ void theCube()
 	glPushMatrix();
 	/////////////x      y    z
 	glTranslatef(-0.5, 0.5, 3.4);
-    glRotatef(270.0, 0.5, 0.0, 0.0);
-    //glRotatef(270.0, 1.0, 0.0, 0.0);
-    glutSolidSphere(0.150, 30, 50);
-    
-    
-    
-    /////////////x      y    z
-    glTranslatef(-1.0, 0.1, 0.2);
-    glRotatef(270.0, 0.5, 0.0, 0.0);
-    //glRotatef(270.0, 1.0, 0.0, 0.0);
-    glutSolidSphere(0.150, 30, 50);
-    
-    
-    //////////////
-    glTranslatef(-0.7, -0.5, 0.2);
-    glRotatef(270.0, 0.5, 0.0, 0.0);
-    //glRotatef(270.0, 1.0, 0.0, 0.0);
-    
+	glRotatef(270.0, 0.5, 0.0, 0.0);
+	//glRotatef(270.0, 1.0, 0.0, 0.0);
+	glutSolidSphere(0.150, 30, 50);
+
+	/////////////x      y    z
+	glTranslatef(-1.0, 0.1, 0.2);
+	glRotatef(270.0, 0.5, 0.0, 0.0);
+	//glRotatef(270.0, 1.0, 0.0, 0.0);
+	glutSolidSphere(0.150, 30, 50);
+
+	//////////////
+	glTranslatef(-0.7, -0.5, 0.2);
+	glRotatef(270.0, 0.5, 0.0, 0.0);
+	//glRotatef(270.0, 1.0, 0.0, 0.0);
+
 	glutSolidSphere(0.150, 30, 50);
 	glPopMatrix();
 
