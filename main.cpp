@@ -14,6 +14,7 @@ By the way so many code not running i know.
 #include <math.h>
 #include <iostream>
 #include <fstream>
+#include <unistd.h>
 //#include <chrono>
 //#include <thread>
 #define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE 7849
@@ -291,13 +292,16 @@ void theCube()
 
 	glutSolidSphere(0.150, 30, 50);
 	glPopMatrix();
-	
+	Sleep(10);
+	//same code but for unix
+	/*unsigned int microsecond = 1000000;
+    usleep(3 * microsecond);//sleeps for 3 second*/
     //sleep_for(nanoseconds(10));
     //sleep_until(system_clock::now() + seconds(1));v
 	///////////////////////////////////////////
 	//this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
-	//glutSolidSphere(1.31f, 100, 100);
+	//glutSolidSphere(1.31f, 100, 100);s
 	//this code making torus
 	glColor4f(0.5f, 0.5f, 0.5f, 0.3f);
 	//glutWireTorus(0.8, 3, 5, 90);
