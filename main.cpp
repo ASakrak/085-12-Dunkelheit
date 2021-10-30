@@ -14,6 +14,8 @@ By the way so many code not running i know.
 #include <math.h>
 #include <iostream>
 #include <fstream>
+//#include <chrono>
+//#include <thread>
 #define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE 7849
 #define XINPUT_GAMEPAD_RIGHT_THUMB_DEADZONE 8689
 #define XINPUT_GAMEPAD_TRIGGER_THRESHOLD 30
@@ -41,8 +43,8 @@ By the way so many code not running i know.
 #endif
 /**/
 using namespace std;
-using namespace std::this_thread; // sleep_for, sleep_until
-using namespace std::chrono; // nanoseconds, system_clock, seconds
+//using namespace this_thread; // sleep_for, sleep_until
+//using namespace chrono; // nanoseconds, system_clock, seconds
 int sum = 0;
 int x;
 int w;
@@ -289,7 +291,9 @@ void theCube()
 
 	glutSolidSphere(0.150, 30, 50);
 	glPopMatrix();
-
+	
+    //sleep_for(nanoseconds(10));
+    //sleep_until(system_clock::now() + seconds(1));v
 	///////////////////////////////////////////
 	//this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
