@@ -41,7 +41,8 @@ By the way so many code not running i know.
 #endif
 /**/
 using namespace std;
-
+using namespace std::this_thread; // sleep_for, sleep_until
+using namespace std::chrono; // nanoseconds, system_clock, seconds
 int sum = 0;
 int x;
 int w;
@@ -166,6 +167,7 @@ void FreeTexture(GLuint texture)
 	glDeleteTextures(1, &texture);
 }
 //////////////////
+
 struct Sign
 {
 	int x1, y1, z1;
