@@ -422,6 +422,7 @@ void display()
 	glVertex3f(0, 4, 0);
 	//this code making cube//
 	//glutSolidCube(0.5);
+	//glutWireTetrahedron(0.5);
 
 	//this code not running but i'll fix(this code for image rendering)
 	texture = LoadTexture("C:/Users/bren/Pictures/New folder/background.jpg", 256, 256);
