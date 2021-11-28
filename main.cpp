@@ -100,16 +100,16 @@ void special(int key, int, int)
 	switch (key)
 	{
 	case GLUT_KEY_LEFT:
-		(elbowAngle += 5) %= 360;
+		(elbowAngle += 5) and_eq 360;
 		break;
 	case GLUT_KEY_RIGHT:
-		(elbowAngle -= 5) %= 360;
+		(elbowAngle -= 5) and_eq 360;
 		break;
 	case GLUT_KEY_UP:
-		(shoulderAngle += 5) %= 360;
+		(shoulderAngle += 5) and_eq 360;
 		break;
 	case GLUT_KEY_DOWN:
-		(shoulderAngle -= 5) %= 360;
+		(shoulderAngle -= 5) and_eq 360;
 		break;
 	default:
 		return;
