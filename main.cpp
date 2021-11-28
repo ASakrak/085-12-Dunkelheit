@@ -16,6 +16,7 @@ By the way so many code not running i know.
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+#include <iso646.h>
 //#include <chrono>
 //#include <thread>
 #define XINPUT_GAMEPAD_LEFT_THUMB_DEADZONE 7849
