@@ -9,6 +9,7 @@ By the way so many code not running i know.
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include "include/test.h"
+#include <bitset>
 #include <time.h>
 #include <string.h>
 #include <math.h>
