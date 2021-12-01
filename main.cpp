@@ -61,7 +61,10 @@ GLuint texture;
 //this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
 //test
-
+GLboolean glIsFramebuffer(GLuint framebuffer);
+//
+glreadBuffer(theCube);
+glDrawBuffer(theCube);
 /*void yoda(){
 int i;
 GLint circle_points = 100; 
