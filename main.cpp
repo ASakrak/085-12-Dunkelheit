@@ -430,7 +430,7 @@ void display()
 
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
-	glRotatef(29, 1, 1, 0);
+	glRotatef(24, 1, 1, 0);
 	//glBegin(GL_POLYGON);
 	//glBegin(GL_TRIANGLES);
 	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
