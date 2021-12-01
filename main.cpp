@@ -3,8 +3,8 @@ first of all I'm aware that the code is too complicated but I'm too busy to fix 
 I use this app just to have fun with cpp, I have purpose just to enjoy and learn a few things.
 By the way so many code not running i know.
 */
+//(It has no commercial purpose.)
 /////////////////////
-#include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
@@ -12,6 +12,17 @@ By the way so many code not running i know.
 #include <bitset>
 #include <time.h>
 #include <string.h>
+#include <windows.h>
+/*if you want to change color, u need this scheme.
+ 0 = Black       8 = Gray
+    1 = Blue        9 = Light Blue
+    2 = Green       A = Light Green
+    3 = Aqua        B = Light Aqua
+    4 = Red         C = Light Red
+    5 = Purple      D = Light Purple
+    6 = Yellow      E = Light Yellow
+    7 = White       F = Bright White
+*/
 #include <math.h>
 #include <iostream>
 #include <fstream>
@@ -30,6 +41,7 @@ By the way so many code not running i know.
 #define Xbox_RB Btn(5)
 #define Xbox_Back Btn(6)
 #define Xbox_Start Btn(7)
+
 #include <cmath>
 #define PI 3.1415926535897;
 
@@ -61,10 +73,7 @@ GLuint texture;
 //this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
 //test
-GLboolean glIsFramebuffer(GLuint framebuffer);
-//
-glreadBuffer(theCube);
-glDrawBuffer(theCube);
+
 /*void yoda(){
 int i;
 GLint circle_points = 100; 
@@ -235,6 +244,13 @@ void reshape(GLint w, GLint h)
 		// height is smaller, so stretch out the width
 		glOrtho(-2.5 * aspect, 2.5 * aspect, -2.5, 2.5, -10.0, 10.0);
 	}
+}
+void test()
+{
+	GLboolean glIsFramebuffer(GLuint framebuffer);
+	//
+	//glDrawBuffer(theCube);
+	//glReadBuffer(theCube);
 }
 //this code for cube and sphere
 void theCube()
@@ -589,7 +605,7 @@ void keyboard(unsigned char key, int x, int y)
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
-	system("color 06");
+	system("color d2");
 	/*cout << "PLANNED CHANGES: I'M TRYING MAKE UFO DESING LMAOOO \n";
 	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";*/
 	glutInit(&argc, argv); // Initialize GLUT
