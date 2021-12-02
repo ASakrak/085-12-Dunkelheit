@@ -24,6 +24,7 @@
 
   
 # About Codes
+- Basicly I'm trying every new codes and methods here. 
 - Simple fps counter and opengl project.
   I used GL/glut.h library.
 - I'm aware that the code is too complicated but I'm too busy to fix it. 
