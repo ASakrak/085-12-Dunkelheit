@@ -104,8 +104,8 @@ for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
     }
 }*/
 static int shoulderAngle = 0, elbowAngle = 0;
-
-/*void drawText(const char *text, int length, int x, int y)
+/*s
+void drawText(const char *text, int length, int x, int y)
 {
 	glMatrixMode(GL_PROJECTION);
 	double *matrix = new double[16];
@@ -126,8 +126,8 @@ static int shoulderAngle = 0, elbowAngle = 0;
 void DrawScreen(SDL_Surface* screen, int h)
 {
 	glClear(GL_COLOR_BUFFER)
-}*/
-
+}
+*/
 // Handles the keyboard event: the left and right arrows bend the elbow, the
 // up and down keys bend the shoulder.
 void special(int key, int, int)
