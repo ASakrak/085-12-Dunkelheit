@@ -252,6 +252,9 @@ void test()
 	//glDrawBuffer(theCube);
 	//glReadBuffer(theCube);
 }
+
+
+
 //this code for cube and sphere
 void theCube()
 {
