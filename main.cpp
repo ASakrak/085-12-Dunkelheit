@@ -253,6 +253,9 @@ void test()
 	//glReadBuffer(theCube);
 }
 
+/*void glGetQueryObjectiv(	GLuint id,
+GLenum pname,
+GLint * params);*/
 
 
 //this code for cube and sphere
