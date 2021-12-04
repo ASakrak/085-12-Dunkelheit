@@ -112,6 +112,10 @@ void drawText(const char *text, int length, int x, int y)
 	glGetDoublev(GL_PROJECTION_MATRIXM, matrix);
 	glLoadIdentity();
 	glOrtho(0, 800, 0, 600, -5, 5);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glPushMatrix();
+	glLoadIndetity();
 }
 
 // Handles the keyboard event: the left and right arrows bend the elbow, the
