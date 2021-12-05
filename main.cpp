@@ -11,6 +11,7 @@ By the way so many code not running i know.
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+#include "src/UnitTest.h"
 #include "include/test.h"
 #include <bitset>
 #include <time.h>
@@ -506,7 +507,9 @@ void display()
 	if (final_time - initial_time > 0)
 	{
 		//i writed frame because its calculating screen activity
-		cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
+		//cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
+		printf("%d\n", frame_count);
+
 		frame_count = 0;
 		initial_time = final_time;
 	}
