@@ -16,6 +16,7 @@ By the way so many code not running i know.
 #include <bitset>
 #include <time.h>
 #include <string.h>
+#include <cstdio>
 #include <windows.h>
 /*if you want to change color, u need this scheme.
  0 = Black       8 = Gray
@@ -638,6 +639,9 @@ void keyboard(unsigned char key, int x, int y)
 int main(int argc, char **argv)
 {
 	system("color 79");
+	ios_base::sync_with_stdio(0);
+	cin.tie(0);
+	cout.tie(0);
 	/*cout << "PLANNED CHANGES: I'M TRYING MAKE UFO DESING LMAOOO \n";
 	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";*/
 	glutInit(&argc, argv); // Initialize GLUT
