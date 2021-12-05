@@ -53,8 +53,6 @@ By the way so many code not running i know.
 #endif
 #elif defined(_WIN32) || defined(_WIN64)
 
-#include <windows.h>
-
 #endif
 /**/
 using namespace std;
