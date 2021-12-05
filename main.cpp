@@ -5,6 +5,9 @@ By the way so many code not running i know.
 */
 //(It has no commercial purpose.)
 /////////////////////
+
+#pragma once
+
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
