@@ -247,7 +247,7 @@ void drawSign()
 	int i;
 	for (i = 1; i < S[0].total + 1; i++)
 	{
-		//glBegin(GL_TRIANGLES); its not require for this algorithm(idk)
+
 		glColor3f(0.2, 0.5, 1);
 		glVertex3f(S[i].x1, S[i].y1, S[i].z1);
 
