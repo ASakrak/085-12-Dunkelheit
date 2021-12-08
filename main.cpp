@@ -507,7 +507,7 @@ void display()
 	final_time = time(NULL);
 	if (final_time - initial_time > 0)
 	{
-		//i writed frame because its calculating screen activity
+
 		//cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
 		printf("%d\n", frame_count);
 
