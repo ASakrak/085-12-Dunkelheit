@@ -477,7 +477,7 @@ void display()
 	//glutWireTetrahedron(0.5);
 
 	//this code not running but i'll fix(this code for image rendering)
-	texture = LoadTexture("C:/Users/bren/Pictures/New folder/background.jpg", 256, 256);
+	//texture = LoadTexture("aaaaaaaaaaaaaaaaaaaa", 256, 256);
 	///////////////////////////////////////////
 
 	glEnable(GL_TEXTURE_2D);
