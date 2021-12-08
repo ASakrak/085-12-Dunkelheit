@@ -67,7 +67,7 @@ int sum = 0;
 int x;
 int w;
 void timer(int);
-//this code for open text file in console but its not running idk
+//this code for open file in console but its not running idk
 ifstream inFile;
 //
 int sn;
