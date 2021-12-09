@@ -209,7 +209,6 @@ void FreeTexture(GLuint texture)
 {
 	glDeleteTextures(1, &texture);
 }
-//////////////////
 
 struct Sign
 {
