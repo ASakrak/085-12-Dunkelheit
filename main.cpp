@@ -11,6 +11,7 @@ By the way so many code not running i know.
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
+#include <stdlib.h>
 #include "src/UnitTest.h"
 #include "include/test.h"
 #include <bitset>
