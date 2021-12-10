@@ -300,49 +300,50 @@ void theCube()
 	glEnd();
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
-	glRotatef(-20.0, 1.0, 0.0, 0.0);
+	glRotatef(0.0, 1.0, 0.0, 0.0);
 	/*/teapot
     glutWireTeapot(1.0);
     glTranslatef(-1.75, 0.5, 0.0);
     //*/
 	///////////////////////////////////////////
 	//
-	//this lines mine ufo desing test are LOL
+	//I'm trying make christmas tree
 	glPushMatrix();
-	glTranslatef(-0.75, 0.5, 0.0);
-	glRotatef(120.0, 1.0, 0.0, 0.0);
-	glutSolidTorus(1.175, 1.85, 100, 60);
-	glTranslatef(-0.10, 0.5, -0.8);
-	glRotatef(270.0, 1.0, 0.0, 0.0);
+	glTranslatef(-0.5, 0.5, 0.0);
+	glRotatef(-90.0, 1.0, 0.0, 0.0);
+	glutSolidCone(1.0, 1.0, 70, 12);
+	//glutSolidTorus(1.175, 1.85, 100, 60);
+	//glTranslatef(-0.10, 0.5, -0.8);
+	//glRotatef(270.0, 1.0, 0.0, 0.0);
 
 	//s
 
 	// Add a sphere to the scene.
-	glTranslatef(-0.10, 0.5, 0.0);
+	//glTranslatef(-0.10, 0.5, 0.0);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
-	glutSolidSphere(1.900, 30, 50);
+	//glutSolidSphere(1.900, 30, 50);
 	//glutSolidSphere(1.570, 30, 30);
 
 	//x,y,z
 	glPushMatrix();
 	/////////////x      y    z
-	glTranslatef(-0.5, 0.5, 3.4);
-	glRotatef(270.0, 0.5, 0.0, 0.0);
+	//glTranslatef(-0.5, 0.5, 3.4);
+	//glRotatef(270.0, 0.5, 0.0, 0.0);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
-	glutSolidSphere(0.150, 30, 50);
+	//glutSolidSphere(0.150, 30, 50);
 
 	/////////////x      y    z
-	glTranslatef(-1.0, 0.1, 0.2);
-	glRotatef(270.0, 0.5, 0.0, 0.0);
+	//glTranslatef(-1.0, 0.1, 0.2);
+	//glRotatef(270.0, 0.5, 0.0, 0.0);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
-	glutSolidSphere(0.150, 30, 50);
+	//glutSolidSphere(0.150, 30, 50);
 
 	//////////////
-	glTranslatef(-0.7, -0.5, 0.2);
-	glRotatef(270.0, 0.5, 0.0, 0.0);
+	//glTranslatef(-0.7, -0.5, 0.2);
+	//glRotatef(270.0, 0.5, 0.0, 0.0);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
 
-	glutSolidSphere(0.150, 30, 50);
+	//glutSolidSphere(0.150, 30, 50);
 	glPopMatrix();
 	Sleep(10);
 	//same code but for unix
