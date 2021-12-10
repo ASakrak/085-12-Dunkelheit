@@ -202,7 +202,7 @@ GLuint LoadTexture(const char *filename, int width, int height)
 
 	free(data);
 
-	return texture; //return whether it was successful
+	return texture;
 }
 
 void FreeTexture(GLuint texture)
