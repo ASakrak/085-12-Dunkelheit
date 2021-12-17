@@ -72,7 +72,7 @@ void timer(int);
 ifstream inFile;
 //
 int sn;
-int cx = 0, cy = 0, cz = 0;
+int cx = 7, cy = 0, cz = 7;
 GLuint texture;
 //this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
@@ -315,7 +315,10 @@ void theCube()
 	//glutSolidTorus(1.175, 1.85, 100, 60);
 	//glTranslatef(-0.10, 0.5, -0.8);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
-
+    glPushMatrix();
+	glTranslatef(-0.7, 0.5, 0.0);
+	glRotatef(-90.0, 1.0, 0.0, 0.0);
+	glutSolidCone(1.0, 1.0, 70, 12);
 	//s
 
 	// Add a sphere to the scene.
