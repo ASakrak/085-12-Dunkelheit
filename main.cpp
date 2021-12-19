@@ -316,8 +316,8 @@ void theCube()
 	//glTranslatef(-0.10, 0.5, -0.8);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
     glPushMatrix();
-	glTranslatef(-0.7, 0.5, 0.0);
-	glRotatef(-90.0, 1.0, 0.0, 0.0);
+	glTranslatef(-0.5, 0.9, 0.2);
+	glRotatef(-02.0, 1.0, 0.0, 0.0);
 	glutSolidCone(1.0, 1.0, 70, 12);
 	//s
 
