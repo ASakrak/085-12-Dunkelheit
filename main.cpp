@@ -319,14 +319,24 @@ void theCube()
 	glTranslatef(0.0, 0.2, 0.95);
 	glRotatef(-0.0, 1.0, 0.0, 0.0);
 	glutSolidCone(1.5, 1.5, 70, 12);
+	//////////
+	glPushMatrix();
+	glTranslatef(0.0, 0.2, 1.15);
+	glRotatef(-0.0, 1.0, 0.0, 0.0);
+	glutSolidCone(1.5, 1.5, 70, 12);
 	////
 	glPushMatrix();
-	glTranslatef(0.0, 0.2, -1.5);
+	glTranslatef(0.0, 0.2, -2.7);
 	glRotatef(-0.0, 1.0, 0.0, 0.0);
 	glutSolidCube(1.2);
+	/////
+	glPushMatrix();
+	glTranslatef(0.5, 0.5, 0.5);
+	glRotatef(0.5, 1.0, 0.0, 0.0);
+	glutSolidSphere(0.170, 30, 30);
 	
 	
-	//s
+	//
 
 	// Add a sphere to the scene.
 	//glTranslatef(-0.10, 0.5, 0.0);
@@ -446,7 +456,7 @@ void display()
 	glutTimerFunc(0, timer, 0);
 	double x, y, z;
 	orbiter.getPosition(x, y, z);
-	gluLookAt(x, y, z, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0);
+	gluLookAt(x, y, z, 0.1, 0.1, 0.0, 0.0, 1.0, 0.0);
 	// make the color a deep blue hue
 	glClearColor(0.0F, 0.0F, 0.0F, 0.1F);
 	// make the shading smooth
@@ -530,10 +540,10 @@ void display()
 void init()
 {
 	//this codes for color
-	GLfloat black[] = {0.0, 0.0, 0.0, 0.2};
-	GLfloat yellow[] = {1.0, 1.0, 0.8, 1.0};
-	GLfloat cyan[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat black[] = {0.0, 0.0, 0.0, 0.0};
+	GLfloat yellow[] = {1.0, 0.0, 0.0, 0.0};
+	GLfloat cyan[] = {1.0, 0.0, 0.0, 0.0};
+	GLfloat white[] = {1.0, 0.0, 0.0, 0.0};
 	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
 
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
