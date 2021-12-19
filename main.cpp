@@ -311,14 +311,21 @@ void theCube()
 	glPushMatrix();
 	glTranslatef(-0.5, 0.5, 0.0);
 	glRotatef(-90.0, 1.0, 0.0, 0.0);
-	glutSolidCone(1.0, 1.0, 70, 12);
+	glutSolidCone(1.5, 1.5, 70, 12);
 	//glutSolidTorus(1.175, 1.85, 100, 60);
 	//glTranslatef(-0.10, 0.5, -0.8);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
     glPushMatrix();
-	glTranslatef(-0.5, 0.9, 0.2);
-	glRotatef(-02.0, 1.0, 0.0, 0.0);
-	glutSolidCone(1.0, 1.0, 70, 12);
+	glTranslatef(0.0, 0.2, 0.95);
+	glRotatef(-0.0, 1.0, 0.0, 0.0);
+	glutSolidCone(1.5, 1.5, 70, 12);
+	////
+	glPushMatrix();
+	glTranslatef(0.0, 0.2, -1.5);
+	glRotatef(-0.0, 1.0, 0.0, 0.0);
+	glutSolidCube(1.2);
+	
+	
 	//s
 
 	// Add a sphere to the scene.
