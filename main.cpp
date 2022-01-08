@@ -529,7 +529,7 @@ void display()
 	{
 
 		//cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
-		printf("%d\n", frame_count);
+		printf("Frame %d\n", frame_count);
 
 		frame_count = 0;
 		initial_time = final_time;
@@ -658,7 +658,7 @@ void keyboard(unsigned char key, int x, int y)
 /* Main function: GLUT runs as a console application starting at main()  */
 int main(int argc, char **argv)
 {
-	system("color 79");
+	system("color 08");
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
