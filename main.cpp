@@ -315,7 +315,7 @@ void theCube()
 	//glutSolidTorus(1.175, 1.85, 100, 60);
 	//glTranslatef(-0.10, 0.5, -0.8);
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
-    glPushMatrix();
+	glPushMatrix();
 	glTranslatef(0.0, 0.2, 0.95);
 	glRotatef(-0.0, 1.0, 0.0, 0.0);
 	glutSolidCone(1.5, 1.5, 70, 12);
@@ -334,8 +334,7 @@ void theCube()
 	glTranslatef(0.5, 0.5, 0.5);
 	glRotatef(0.5, 1.0, 0.0, 0.0);
 	glutSolidSphere(0.170, 30, 30);
-	
-	
+
 	//
 
 	// Add a sphere to the scene.
