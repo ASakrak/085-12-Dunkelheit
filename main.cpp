@@ -317,25 +317,35 @@ void theCube()
 	//glRotatef(270.0, 1.0, 0.0, 0.0);
 	glPushMatrix();
 	glTranslatef(0.0, 0.2, 0.95);
-	glRotatef(-0.0, 1.0, 0.0, 0.0);
+	glRotatef(0.0, 1.0, 0.0, 0.0);
 	glutSolidCone(1.5, 1.5, 70, 12);
 	//////////
 	glPushMatrix();
 	glTranslatef(0.0, 0.2, 1.15);
-	glRotatef(-0.0, 1.0, 0.0, 0.0);
+	glRotatef(0.0, 1.0, 0.0, 0.0);
 	glutSolidCone(1.5, 1.5, 70, 12);
 	////
 	glPushMatrix();
 	glTranslatef(0.0, 0.2, -2.7);
-	glRotatef(-0.0, 1.0, 0.0, 0.0);
+	glRotatef(0.0, 1.0, 0.0, 0.0);
 	glutSolidCube(1.2);
 	/////
 	glPushMatrix();
-	glTranslatef(0.5, 0.5, 0.5);
-	glRotatef(0.5, 1.0, 0.0, 0.0);
-	glutSolidSphere(0.170, 30, 30);
+	glTranslatef(-0.5, -1.1, 1.9);
+	glRotatef(-0.5, 1.0, 1.0, 0.0);
+	glutSolidSphere(0.370, 30, 30);
+    /////
+    glPushMatrix();
+	glTranslatef(0.9, -0.8, 0.5);
+	glRotatef(-0.5, 1.0, 1.0, 0.0);
+	glutSolidSphere(0.370, 30, 30);
+	/////
+    /*glPushMatrix();
+	glTranslatef(0.9, -0.8, 0.5);
+	glRotatef(1.6, 1.0, 1.0, 0.0);
+	glutSolidSphere(0.370, 30, 30);*/
 
-	//
+	///////////////////////////////////////////
 
 	// Add a sphere to the scene.
 	//glTranslatef(-0.10, 0.5, 0.0);
