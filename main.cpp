@@ -331,7 +331,7 @@ void theCube()
 	glutSolidCube(1.2);
 	/////
 	glPushMatrix();
-	glTranslatef(-0.5, -1.1, 1.9);
+	glTranslatef(-0.6, -1.1, 1.9);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
     /////
@@ -342,6 +342,12 @@ void theCube()
 	/////
 	glPushMatrix();
 	glTranslatef(0.9, 1.5, 0.5);
+	glRotatef(-0.5, 1.0, 1.0, 0.0);
+	glutSolidSphere(0.370, 30, 30);
+	
+	/////
+	glPushMatrix();
+	glTranslatef(0.2, 1.5, 0.5);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
     /*glPushMatrix();
