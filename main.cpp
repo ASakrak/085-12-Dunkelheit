@@ -71,6 +71,7 @@ void timer(int);
 //this code for open file in console but its not running idk
 ifstream inFile;
 //
+GLfloat angle = 0.0f;
 int sn;
 int cx = 7, cy = 0, cz = 7;
 GLuint texture;
@@ -205,11 +206,13 @@ GLuint LoadTexture(const char *filename, int width, int height)
 
 	return texture;
 }
-
-void FreeTexture(GLuint texture)
+void idle() {
+   glutPostRedisplay();   // Post a re-paint request to activate display()
+}
+/*void FreeTexture(GLuint texture)
 {
 	glDeleteTextures(1, &texture);
-}
+}*/
 
 struct Sign
 {
@@ -217,6 +220,25 @@ struct Sign
 	int state;
 	int total;
 };
+/*void reshape(GLsizei width, GLsizei height) {  // GLsizei for non-negative integer
+   // Compute aspect ratio of the new window
+   if (height == 0) height = 1;                // To prevent divide by 0
+   GLfloat aspect = (GLfloat)width / (GLfloat)height;
+ 
+   // Set the viewport to cover the new window
+   glViewport(0, 0, width, height);
+ 
+   // Set the aspect ratio of the clipping area to match the viewport
+   glMatrixMode(GL_PROJECTION);  // To operate on the Projection matrix
+   glLoadIdentity();
+   if (width >= height) {
+     // aspect >= 1, set the height from -1 to 1, with larger width
+      gluOrtho2D(-1.0 * aspect, 1.0 * aspect, -1.0, 1.0);
+   } else {
+      // aspect < 1, set the width to -1 to 1, with larger height
+     gluOrtho2D(-1.0, 1.0, -1.0 / aspect, 1.0 / aspect);
+   }
+}*/
 Sign S[100];
 //this code adding sign to grid but now its not running.
 void addSign()
@@ -254,23 +276,7 @@ void drawSign()
 		glEnd();
 	}
 }
-void reshape(GLint w, GLint h)
-{
-	glViewport(0, 0, w, h);
-	glMatrixMode(GL_PROJECTION);
-	GLfloat aspect = GLfloat(w) / GLfloat(h);
-	glLoadIdentity();
-	if (w <= h)
-	{
-		// width is smaller, so stretch out the height
-		glOrtho(-2.5, 2.5, -2.5 / aspect, 2.5 / aspect, -10.0, 10.0);
-	}
-	else
-	{
-		// height is smaller, so stretch out the width
-		glOrtho(-2.5 * aspect, 2.5 * aspect, -2.5, 2.5, -10.0, 10.0);
-	}
-}
+
 void test()
 {
 	GLboolean glIsFramebuffer(GLuint framebuffer);
@@ -504,6 +510,9 @@ void display()
 	wireBox(2.0, 0.4, 1.0);
 	glTranslatef(1.0, 0.0, 0.0);
 	glRotatef((GLfloat)elbowAngle, 0.0, 0.0, 1.0);
+	glPushMatrix();                     // Save model-view matrix setting
+    glTranslatef(-0.5f, 0.4f, 0.0f);    // Translate
+    glRotatef(angle, 0.0f, 0.0f, 1.0f); // rotate by angle in degrees
 	glTranslatef(1.0, 0.0, 0.0);
 	wireBox(2.0, 0.4, 1.0);
 	///
@@ -546,12 +555,12 @@ void display()
 	drawGrid();
 	drawSign();
 	theCube();
-	FreeTexture(texture);
+	//FreeTexture(texture);
 	glutSwapBuffers();
 	glFlush();
 
 	glEnd();
-
+    //angle += 0.2f;
 	glVertex2f(0.0, 5.0);
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
@@ -704,7 +713,7 @@ int main(int argc, char **argv)
 	glutCreateWindow("Alpha 0.0.1"); // Create a window with the given title
 									 // Set the window's initial width & height
 									 // Position the window's initial top-left corner
-
+    // glutIdleFunc(idle); 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
 
