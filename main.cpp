@@ -224,7 +224,8 @@ struct Sign
    // Compute aspect ratio of the new window
    if (height == 0) height = 1;                // To prevent divide by 0
    GLfloat aspect = (GLfloat)width / (GLfloat)height;
- 
+   
+	 
    // Set the viewport to cover the new window
    glViewport(0, 0, width, height);
  
@@ -710,10 +711,11 @@ int main(int argc, char **argv)
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 800);
-	glutCreateWindow("Alpha 0.0.1"); // Create a window with the given title
+	glutCreateWindow("Alpha 0.1.0.0"); // Create a window with the given title
 									 // Set the window's initial width & height
 									 // Position the window's initial top-left corner
     // glutIdleFunc(idle); 
+    //glutReshapeFunc(reshape); 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
 
