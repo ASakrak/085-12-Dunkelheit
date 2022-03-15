@@ -78,6 +78,15 @@ int cx = 7, cy = 0, cz = 7;
 GLuint texture;
 //this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
+
+
+// Set this to true to animate.
+//static bool spinning = true;
+// This is the number of frames per second to render.
+//static const int FPS = 60;
+//static GLfloat currentAngleOfRotation = 0.0;
+
+
 //test
 
 /*void yoda(){
@@ -207,13 +216,28 @@ GLuint LoadTexture(const char *filename, int width, int height)
 
 	return texture;
 }
-void idle() {
+/*void idle() {
    glutPostRedisplay();   // Post a re-paint request to activate display()
-}
+}*/
 /*void FreeTexture(GLuint texture)
 {
 	glDeleteTextures(1, &texture);
 }*/
+
+/*void reshape(GLint w, GLint h) {
+	glViewport(0, 0, w, h);
+	GLfloat aspect = (GLfloat)w / (GLfloat)h;
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	if (w <= h) {
+    // width is smaller, go from -50 .. 50 in width
+    glOrtho(-50.0, 50.0, -50.0/aspect, 50.0/aspect, -1.0, 1.0);
+  } else {
+    // height is smaller, go from -50 .. 50 in height
+    glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
+  }
+}*/
+
 
 struct Sign
 {
@@ -494,6 +518,17 @@ public:
 };*/
 void display()
 {
+	
+	//just for animation*/
+	/*glClear(GL_COLOR_BUFFER_BIT);
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glRotatef(currentAngleOfRotation, 0.0, 0.0, 1.0);
+    glRectf(-25.0, -25.0, 25.0, 25.0);
+    glFlush();
+    glutSwapBuffers();*/
+	//
+	
 	glutTimerFunc(0, timer, 0);
 	double x, y, z;
 	orbiter.getPosition(x, y, z);
@@ -567,6 +602,8 @@ void display()
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
 	glVertex2f(5.0, -2.0);
+	
+	
 	//this codes for frame counter on console
 	frame_count++;
 	final_time = time(NULL);
@@ -580,6 +617,28 @@ void display()
 		initial_time = final_time;
 	}
 }
+
+/*void timer /*but for animation*//* (int v) {
+	
+	if (spinning) {
+    currentAngleOfRotation += 1.0;
+    if (currentAngleOfRotation > 360.0) {
+      currentAngleOfRotation -= 360.0;
+    }
+    glutPostRedisplay();
+  }
+  glutTimerFunc(1000/FPS, timer, v);
+}
+
+
+void mouse(int button, int state, int x, int y) {
+	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+		spinning = true;
+	}
+	else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN){
+		spinning = false;
+	}
+}*/
 
 void init()
 {
@@ -719,7 +778,8 @@ int main(int argc, char **argv)
     //glutReshapeFunc(reshape); 
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
-
+    //glutReshapeFunc(reshape);
+    //glutMouseFunc(mouse);
 	glutTimerFunc(0, timer, 0);
 	init();
 	// Register display callback handler for window re-paint
