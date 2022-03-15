@@ -1,8 +1,9 @@
 /*//////////////////////
 first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
-I use this app just to have fun with cpp, I have purpose just to enjoy and learn a few things.
+I'm using this app just to have fun with cpp and learn/try something.
 By the way so many code not running i know.
 */
+
 //(It has no commercial purpose.)
 /////////////////////
 
