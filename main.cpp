@@ -766,7 +766,7 @@ int main(int argc, char **argv)
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
-	/*cout << "PLANNED CHANGES: I'M TRYING MAKE UFO DESING LMAOOO \n";
+	/*
 	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";*/
 	glutInit(&argc, argv); // Initialize GLUT
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
