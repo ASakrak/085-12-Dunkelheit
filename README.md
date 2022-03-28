@@ -36,4 +36,4 @@ GLUT - The OpenGL Utility Toolkit
   I used GL/glut.h library.
 - I'm aware that the code is too complicated but I'm too busy to fix it. 
 - I'm coding this app just to have fun with cpp and learn a few things.
-- By the way so many code not running i know.
+- By the way so many code not running, i know.
