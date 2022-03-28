@@ -1,5 +1,8 @@
 # 085-12-Dunkelheit
 
+# What Is GLUT?
+GLUT - The OpenGL Utility Toolkit
+* https://www.opengl.org/resources/libraries/glut/glut_downloads.php
 
 # How Can I Download On Linux?
 - First of all, I have no idea to download on linux, but I found some codes on Google, maybe I helped you a little bit.
