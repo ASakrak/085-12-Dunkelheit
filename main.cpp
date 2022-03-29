@@ -267,7 +267,7 @@ struct Sign
 }*/
 Sign S[100];
 //this code adding sign to grid but now its not running.
-void addSign()
+/*void addSign()
 {
 	S[0].state++;
 	if (S[0].state > 4)
@@ -287,7 +287,7 @@ void addSign()
 		S[sn].y1 = cy;
 		S[sn].z1 = cz;
 	}
-}
+}*/
 
 //THIS CODES NOT RUNNING. I HAVENT ANY IDEA BUT I'LL FIX
 void drawSign()
