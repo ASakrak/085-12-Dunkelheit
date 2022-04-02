@@ -686,10 +686,10 @@ void init()
 
 void keyboard(unsigned char key, int x, int y)
 {
-	if (key == 'h')
+	/*if (key == 'h')
 	{
 		addSign();
-	}
+	}*/
 	if (key == '8')
 	{
 		cz -= 1;
