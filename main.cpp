@@ -1,5 +1,5 @@
 /*//////////////////////
-first of all I'm aware that the code is too complicated but I'm too busy to fix it. 
+first of all I'm aware that the code is too complicated but I'm too busy to fix it.
 I'm using this app just to have fun with cpp and learn/try something.
 By the way so many code not running i know.
 */
@@ -13,6 +13,9 @@ By the way so many code not running i know.
 #include <GL/glu.h>
 #include <GL/glut.h>
 #include <stdlib.h>
+// for compile test
+#include "src/test.cpp"
+//
 #include "src/UnitTest.h"
 #include "include/test.h"
 #include <bitset>
@@ -22,13 +25,13 @@ By the way so many code not running i know.
 #include <windows.h>
 /*if you want to change color, u need this scheme.
  0 = Black       8 = Gray
-    1 = Blue        9 = Light Blue
-    2 = Green       A = Light Green
-    3 = Aqua        B = Light Aqua
-    4 = Red         C = Light Red
-    5 = Purple      D = Light Purple
-    6 = Yellow      E = Light Yellow
-    7 = White       F = Bright White
+	1 = Blue        9 = Light Blue
+	2 = Green       A = Light Green
+	3 = Aqua        B = Light Aqua
+	4 = Red         C = Light Red
+	5 = Purple      D = Light Purple
+	6 = Yellow      E = Light Yellow
+	7 = White       F = Bright White
 */
 #include <math.h>
 #include <iostream>
@@ -63,60 +66,58 @@ By the way so many code not running i know.
 #endif
 /**/
 using namespace std;
-//using namespace this_thread; // sleep_for, sleep_until
-//using namespace chrono; // nanoseconds, system_clock, seconds
+// using namespace this_thread; // sleep_for, sleep_until
+// using namespace chrono; // nanoseconds, system_clock, seconds
 int sum = 0;
 int x;
 int w;
 void timer(int);
-//this code for open file in console but its not running idk
+// this code for open file in console but its not running idk
 ifstream inFile;
 //
 GLfloat angle = 0.0f;
 int sn;
 int cx = 7, cy = 0, cz = 7;
 GLuint texture;
-//this code for frame counter
+// this code for frame counter
 int initial_time = time(NULL), final_time, frame_count = 0;
 
-
 // Set this to true to animate.
-//static bool spinning = true;
+// static bool spinning = true;
 // This is the number of frames per second to render.
-//static const int FPS = 60;
-//static GLfloat currentAngleOfRotation = 0.0;
+// static const int FPS = 60;
+// static GLfloat currentAngleOfRotation = 0.0;
 
-
-//test
+// test
 
 /*void yoda(){
 int i;
-GLint circle_points = 100; 
-glBegin(GL_LINE_LOOP); 
-for (i = 0; i < circle_points; i++) {    
-   angle = 2*PI*i/circle_points; 
-   glVertex2f(cos(angle), sin(angle)); 
-} 
+GLint circle_points = 100;
+glBegin(GL_LINE_LOOP);
+for (i = 0; i < circle_points; i++) {
+   angle = 2*PI*i/circle_points;
+   glVertex2f(cos(angle), sin(angle));
+}
 }*/
 
-//test
-/*DWORD dwResult;    
+// test
+/*DWORD dwResult;
 for (DWORD i=0; i< XUSER_MAX_COUNT; i++ )
 {
-    XINPUT_STATE state;
-    ZeroMemory( &state, sizeof(XINPUT_STATE) );
+	XINPUT_STATE state;
+	ZeroMemory( &state, sizeof(XINPUT_STATE) );
 
-    // Simply get the state of the controller from XInput.
-    dwResult = XInputGetState( i, &state );
+	// Simply get the state of the controller from XInput.
+	dwResult = XInputGetState( i, &state );
 
-    if( dwResult == ERROR_SUCCESS )
-    {
-        // Controller is connected
-    }
-    else
-    {
-        // Controller is not connected
-    }
+	if( dwResult == ERROR_SUCCESS )
+	{
+		// Controller is connected
+	}
+	else
+	{
+		// Controller is not connected
+	}
 }*/
 static int shoulderAngle = 0, elbowAngle = 0;
 /*s
@@ -174,7 +175,7 @@ void wireBox(GLdouble width, GLdouble height, GLdouble depth)
 	glPopMatrix();
 }
 
-//this codes for add texture but its not running now
+// this codes for add texture but its not running now
 GLuint LoadTexture(const char *filename, int width, int height)
 {
 
@@ -182,7 +183,7 @@ GLuint LoadTexture(const char *filename, int width, int height)
 	unsigned char *data;
 	FILE *file;
 
-	//The following code will read in our RAW file
+	// The following code will read in our RAW file
 	file = fopen(filename, "rb");
 	if (file == NULL)
 		return 0;
@@ -230,14 +231,13 @@ GLuint LoadTexture(const char *filename, int width, int height)
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	if (w <= h) {
-    // width is smaller, go from -50 .. 50 in width
-    glOrtho(-50.0, 50.0, -50.0/aspect, 50.0/aspect, -1.0, 1.0);
+	// width is smaller, go from -50 .. 50 in width
+	glOrtho(-50.0, 50.0, -50.0/aspect, 50.0/aspect, -1.0, 1.0);
   } else {
-    // height is smaller, go from -50 .. 50 in height
-    glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
+	// height is smaller, go from -50 .. 50 in height
+	glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
   }
 }*/
-
 
 struct Sign
 {
@@ -249,24 +249,24 @@ struct Sign
    // Compute aspect ratio of the new window
    if (height == 0) height = 1;                // To prevent divide by 0
    GLfloat aspect = (GLfloat)width / (GLfloat)height;
-   
-	 
+
+
    // Set the viewport to cover the new window
    glViewport(0, 0, width, height);
- 
+
    // Set the aspect ratio of the clipping area to match the viewport
    glMatrixMode(GL_PROJECTION);  // To operate on the Projection matrix
    glLoadIdentity();
    if (width >= height) {
-     // aspect >= 1, set the height from -1 to 1, with larger width
-      gluOrtho2D(-1.0 * aspect, 1.0 * aspect, -1.0, 1.0);
+	 // aspect >= 1, set the height from -1 to 1, with larger width
+	  gluOrtho2D(-1.0 * aspect, 1.0 * aspect, -1.0, 1.0);
    } else {
-      // aspect < 1, set the width to -1 to 1, with larger height
-     gluOrtho2D(-1.0, 1.0, -1.0 / aspect, 1.0 / aspect);
+	  // aspect < 1, set the width to -1 to 1, with larger height
+	 gluOrtho2D(-1.0, 1.0, -1.0 / aspect, 1.0 / aspect);
    }
 }*/
 Sign S[100];
-//this code adding sign to grid but now its not running.
+// this code adding sign to grid but now its not running.
 /*void addSign()
 {
 	S[0].state++;
@@ -289,7 +289,7 @@ Sign S[100];
 	}
 }*/
 
-//THIS CODES NOT RUNNING. I HAVENT ANY IDEA BUT I'LL FIX
+// THIS CODES NOT RUNNING. I HAVENT ANY IDEA BUT I'LL FIX
 void drawSign()
 {
 	int i;
@@ -307,25 +307,25 @@ void test()
 {
 	GLboolean glIsFramebuffer(GLuint framebuffer);
 	//
-	//glDrawBuffer(theCube);
-	//glReadBuffer(theCube);
+	// glDrawBuffer(theCube);
+	// glReadBuffer(theCube);
 }
 
 /*void glGetQueryObjectiv(	GLuint id,
 GLenum pname,
 GLint * params);*/
 
-//this code for cube and sphere
+// this code for cube and sphere
 void theCube()
 {
-	//i tried adding texture but its not running. i havent any idea for this codes idk LMAOOIO
+	// i tried adding texture but its not running. i havent any idea for this codes idk LMAOOIO
 	glEnable(GL_TEXTURE_2D);
-	glBindTexture(GL_TEXTURE_2D, texture); //bind the texture
+	glBindTexture(GL_TEXTURE_2D, texture); // bind the texture
 	glPushMatrix();
-	//glBegin(GL_TRIANGLES);
-	//glBegin(GL_QUAD_STRIP);
-	//glColor3f(2.0f, 0.5f, 1.0f);
-	//glutSolidCube(0.4);
+	// glBegin(GL_TRIANGLES);
+	// glBegin(GL_QUAD_STRIP);
+	// glColor3f(2.0f, 0.5f, 1.0f);
+	// glutSolidCube(0.4);
 	glVertex3f(0, 0, 0);
 	glVertex3f(8, 0, 0);
 	glVertex3f(0, 8, 0);
@@ -334,19 +334,19 @@ void theCube()
 	glTranslatef(cx, cy, cz);
 	glRotatef(0.0, 1.0, 0.0, 0.0);
 	/*/teapot
-    glutWireTeapot(1.0);
-    glTranslatef(-1.75, 0.5, 0.0);
-    //*/
+	glutWireTeapot(1.0);
+	glTranslatef(-1.75, 0.5, 0.0);
+	//*/
 	///////////////////////////////////////////
 	//
-	//I'm trying make christmas tree
+	// I'm trying make christmas tree
 	glPushMatrix();
 	glTranslatef(-0.5, 0.5, 0.0);
 	glRotatef(-90.0, 1.0, 0.0, 0.0);
 	glutSolidCone(1.5, 1.5, 70, 12);
-	//glutSolidTorus(1.175, 1.85, 100, 60);
-	//glTranslatef(-0.10, 0.5, -0.8);
-	//glRotatef(270.0, 1.0, 0.0, 0.0);
+	// glutSolidTorus(1.175, 1.85, 100, 60);
+	// glTranslatef(-0.10, 0.5, -0.8);
+	// glRotatef(270.0, 1.0, 0.0, 0.0);
 	glPushMatrix();
 	glTranslatef(0.0, 0.2, 0.95);
 	glRotatef(0.0, 1.0, 0.0, 0.0);
@@ -366,8 +366,8 @@ void theCube()
 	glTranslatef(-0.6, -1.1, 1.9);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
-    /////
-    glPushMatrix();
+	/////
+	glPushMatrix();
 	glTranslatef(0.9, -0.8, 0.5);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
@@ -376,27 +376,27 @@ void theCube()
 	glTranslatef(0.9, 1.5, 0.5);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
-	
+
 	/////
 	glPushMatrix();
 	glTranslatef(0.2, 1.0, 0.5);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
 	/////
-	
+
 	glPushMatrix();
 	glTranslatef(-1.2, -1.0, 0.5);
 	glRotatef(-0.5, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
-	
+
 	/////
 	//(x,y,z)
 	glPushMatrix();
 	glTranslatef(-1.5, -1.0, 0.5);
 	glRotatef(-0.7, -2.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);
-	
-    /*glPushMatrix();
+
+	/*glPushMatrix();
 	glTranslatef(0.9, -0.8, 0.5);
 	glRotatef(1.6, 1.0, 1.0, 0.0);
 	glutSolidSphere(0.370, 30, 30);*/
@@ -404,49 +404,49 @@ void theCube()
 	///////////////////////////////////////////
 
 	// Add a sphere to the scene.
-	//glTranslatef(-0.10, 0.5, 0.0);
-	//glRotatef(270.0, 1.0, 0.0, 0.0);
-	//glutSolidSphere(1.900, 30, 50);
-	//glutSolidSphere(1.570, 30, 30);
+	// glTranslatef(-0.10, 0.5, 0.0);
+	// glRotatef(270.0, 1.0, 0.0, 0.0);
+	// glutSolidSphere(1.900, 30, 50);
+	// glutSolidSphere(1.570, 30, 30);
 
-	//x,y,z
+	// x,y,z
 	glPushMatrix();
 	/////////////x      y    z
-	//glTranslatef(-0.5, 0.5, 3.4);
-	//glRotatef(270.0, 0.5, 0.0, 0.0);
-	//glRotatef(270.0, 1.0, 0.0, 0.0);
-	//glutSolidSphere(0.150, 30, 50);
+	// glTranslatef(-0.5, 0.5, 3.4);
+	// glRotatef(270.0, 0.5, 0.0, 0.0);
+	// glRotatef(270.0, 1.0, 0.0, 0.0);
+	// glutSolidSphere(0.150, 30, 50);
 
 	/////////////x      y    z
-	//glTranslatef(-1.0, 0.1, 0.2);
-	//glRotatef(270.0, 0.5, 0.0, 0.0);
-	//glRotatef(270.0, 1.0, 0.0, 0.0);
-	//glutSolidSphere(0.150, 30, 50);
+	// glTranslatef(-1.0, 0.1, 0.2);
+	// glRotatef(270.0, 0.5, 0.0, 0.0);
+	// glRotatef(270.0, 1.0, 0.0, 0.0);
+	// glutSolidSphere(0.150, 30, 50);
 
 	//////////////
-	//glTranslatef(-0.7, -0.5, 0.2);
-	//glRotatef(270.0, 0.5, 0.0, 0.0);
-	//glRotatef(270.0, 1.0, 0.0, 0.0);
+	// glTranslatef(-0.7, -0.5, 0.2);
+	// glRotatef(270.0, 0.5, 0.0, 0.0);
+	// glRotatef(270.0, 1.0, 0.0, 0.0);
 
-	//glutSolidSphere(0.150, 30, 50);
+	// glutSolidSphere(0.150, 30, 50);
 	glPopMatrix();
 	Sleep(10);
-	//same code but for unix
-	//and this "#include <unistd.h>" lib for these codes
+	// same code but for unix
+	// and this "#include <unistd.h>" lib for these codes
 	/*unsigned int microsecond = 1000000;
-    usleep(3 * microsecond);//sleeps for 3 second*/
+	usleep(3 * microsecond);//sleeps for 3 second*/
 
-	//sleep_for(nanoseconds(10));
-	//sleep_until(system_clock::now() + seconds(1));v
+	// sleep_for(nanoseconds(10));
+	// sleep_until(system_clock::now() + seconds(1));v
 	///////////////////////////////////////////
-	//this code makeing circle/sphere
+	// this code makeing circle/sphere
 	glColor4f(0.5f, 0.2f, 0.2f, 1.0f);
-	//glutSolidSphere(1.31f, 100, 100);s
-	//this code making torus
+	// glutSolidSphere(1.31f, 100, 100);s
+	// this code making torus
 	glColor4f(0.5f, 0.5f, 0.5f, 0.3f);
-	//glutWireTorus(0.8, 3, 5, 90);
-	//cube here//
-	//glutSolidCube(5);
+	// glutWireTorus(0.8, 3, 5, 90);
+	// cube here//
+	// glutSolidCube(5);
 	/////////////////
 	glPopMatrix();
 	glEnd();
@@ -487,7 +487,7 @@ public:
 	Orbiter(double radius) : radius(radius), u(0.0) {}
 	void advance(double delta) { u += delta; }
 	void getPosition(double &x, double &y, double &z)
-	std:cout("test");
+		std : cout("test");
 	{
 		x = radius * cos(u);
 		y = 0;
@@ -519,17 +519,17 @@ public:
 };*/
 void display()
 {
-	
-	//just for animation*/
+
+	// just for animation*/
 	/*glClear(GL_COLOR_BUFFER_BIT);
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    glRotatef(currentAngleOfRotation, 0.0, 0.0, 1.0);
-    glRectf(-25.0, -25.0, 25.0, 25.0);
-    glFlush();
-    glutSwapBuffers();*/
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+	glRotatef(currentAngleOfRotation, 0.0, 0.0, 1.0);
+	glRectf(-25.0, -25.0, 25.0, 25.0);
+	glFlush();
+	glutSwapBuffers();*/
 	//
-	
+
 	glutTimerFunc(0, timer, 0);
 	double x, y, z;
 	orbiter.getPosition(x, y, z);
@@ -548,13 +548,13 @@ void display()
 	wireBox(2.0, 0.4, 1.0);
 	glTranslatef(1.0, 0.0, 0.0);
 	glRotatef((GLfloat)elbowAngle, 0.0, 0.0, 1.0);
-	glPushMatrix();                     // Save model-view matrix setting
-    glTranslatef(-0.5f, 0.4f, 0.0f);    // Translate
-    glRotatef(angle, 0.0f, 0.0f, 1.0f); // rotate by angle in degrees
+	glPushMatrix();						// Save model-view matrix setting
+	glTranslatef(-0.5f, 0.4f, 0.0f);	// Translate
+	glRotatef(angle, 0.0f, 0.0f, 1.0f); // rotate by angle in degrees
 	glTranslatef(1.0, 0.0, 0.0);
 	wireBox(2.0, 0.4, 1.0);
 	///
-	//I'm trying make animation to sphere andd torus
+	// I'm trying make animation to sphere andd torus
 	glVertex2f(x_position, 1.0);
 	glVertex2f(x_position, -1.0);
 	glVertex2f(x_position + 2.0, -1.0);
@@ -563,28 +563,28 @@ void display()
 	glLoadIdentity();
 	glTranslatef(-13.5, 0, -45);
 	glRotatef(24, 1, 1, 0);
-	//glBegin(GL_POLYGON);
-	//glBegin(GL_TRIANGLES);
-	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
+	// glBegin(GL_POLYGON);
+	// glBegin(GL_TRIANGLES);
+	// glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(5, 0, 0);
 	glVertex3f(0, 5, 0);
-	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
+	// glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(4, 0, 0);
 	glVertex3f(0, 4, 0);
-	//this code making cube//
-	//glutSolidCube(0.5);
-	//glutWireTetrahedron(0.5);
+	// this code making cube//
+	// glutSolidCube(0.5);
+	// glutWireTetrahedron(0.5);
 
-	//this code not running but i'll fix(this code for image rendering)
-	//texture = LoadTexture("aaaaaaaaaaaaaaaaaaaa", 256, 256);
+	// this code not running but i'll fix(this code for image rendering)
+	// texture = LoadTexture("aaaaaaaaaaaaaaaaaaaa", 256, 256);
 	///////////////////////////////////////////
 
 	glEnable(GL_TEXTURE_2D);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	///glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
-	//glBegin(GL_QUADS);
+	/// glColor3f(0.5f, 0.0f, 1.0f); // (0.5, 0, 1) is half red and full blue, giving dark purple.
+	// glBegin(GL_QUADS);
 	glVertex2f(0.0, 5.0);
 	glVertex2f(-1.0, -3.0);
 	glVertex2f(4.0, -3.0);
@@ -593,25 +593,24 @@ void display()
 	drawGrid();
 	drawSign();
 	theCube();
-	//FreeTexture(texture);
+	// FreeTexture(texture);
 	glutSwapBuffers();
 	glFlush();
 
 	glEnd();
-    //angle += 0.2f;
+	// angle += 0.2f;
 	glVertex2f(0.0, 5.0);
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
 	glVertex2f(5.0, -2.0);
-	
-	
-	//this codes for frame counter on console
+
+	// this codes for frame counter on console
 	frame_count++;
 	final_time = time(NULL);
 	if (final_time - initial_time > 0)
 	{
 
-		//cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
+		// cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
 		printf("Frame %d\n", frame_count);
 
 		frame_count = 0;
@@ -619,31 +618,31 @@ void display()
 	}
 }
 
-/*void timer /*but for animation*//* (int v) {
-	
-	if (spinning) {
-    currentAngleOfRotation += 1.0;
-    if (currentAngleOfRotation > 360.0) {
-      currentAngleOfRotation -= 360.0;
-    }
-    glutPostRedisplay();
-  }
-  glutTimerFunc(1000/FPS, timer, v);
-}
+/*void timer /*but for animation*/ /* (int v) {
+
+	 if (spinning) {
+	 currentAngleOfRotation += 1.0;
+	 if (currentAngleOfRotation > 360.0) {
+	   currentAngleOfRotation -= 360.0;
+	 }
+	 glutPostRedisplay();
+   }
+   glutTimerFunc(1000/FPS, timer, v);
+ }
 
 
-void mouse(int button, int state, int x, int y) {
-	if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
-		spinning = true;
-	}
-	else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN){
-		spinning = false;
-	}
-}*/
+ void mouse(int button, int state, int x, int y) {
+	 if (button == GLUT_LEFT_BUTTON && state == GLUT_DOWN) {
+		 spinning = true;
+	 }
+	 else if (button == GLUT_RIGHT_BUTTON && state == GLUT_DOWN){
+		 spinning = false;
+	 }
+ }*/
 
 void init()
 {
-	//this codes for color
+	// this codes for color
 	GLfloat black[] = {0.0, 1.0, 0.0, 0.0};
 	GLfloat yellow[] = {1.0, 1.0, 0.0, 1.0};
 	GLfloat cyan[] = {1.0, 0.0, 0.0, 1.0};
@@ -663,8 +662,8 @@ void init()
 	glEnable(GL_LIGHT0);   // turn LIGHT0 on
 	glEnable(GL_DEPTH_TEST);
 	///
-	//glBegin(GL_TRIANGLES);
-	//glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
+	// glBegin(GL_TRIANGLES);
+	// glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glShadeModel(GL_FLAT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -698,7 +697,7 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == '2')
 	{
 		cz += 1;
-	} //forward / back
+	} // forward / back
 	if (key == '4')
 	{
 		cx -= 1;
@@ -714,7 +713,7 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 's')
 	{
 		cz += 1;
-	} //forward / back
+	} // forward / back
 	if (key == 'a')
 	{
 		cx -= 1;
@@ -722,7 +721,7 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 'd')
 	{
 		cx += 1;
-	} //left /right
+	} // left /right
 	if (key == 'W')
 	{
 		cz -= 1;
@@ -730,7 +729,7 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 'S')
 	{
 		cz += 1;
-	} //forward / back
+	} // forward / back
 	if (key == 'A')
 	{
 		cx -= 1;
@@ -738,7 +737,7 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 'D')
 	{
 		cx += 1;
-	} //left /right
+	} // left /right
 	/*if (key == 'Xbox_BtnA')
 	{
 		cz -= 1;
@@ -773,14 +772,14 @@ int main(int argc, char **argv)
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 	glutInitWindowSize(1200, 800);
 	glutCreateWindow("Alpha 0.1.0.0"); // Create a window with the given title
-									 // Set the window's initial width & height
-									 // Position the window's initial top-left corner
-    // glutIdleFunc(idle); 
-    //glutReshapeFunc(reshape); 
+									   // Set the window's initial width & height
+									   // Position the window's initial top-left corner
+									   // glutIdleFunc(idle);
+									   // glutReshapeFunc(reshape);
 	glutDisplayFunc(display);
 	glutKeyboardFunc(keyboard);
-    //glutReshapeFunc(reshape);
-    //glutMouseFunc(mouse);
+	// glutReshapeFunc(reshape);
+	// glutMouseFunc(mouse);
 	glutTimerFunc(0, timer, 0);
 	init();
 	// Register display callback handler for window re-paint
