@@ -486,8 +486,7 @@ class Orbiter
 public:
 	Orbiter(double radius) : radius(radius), u(0.0) {}
 	void advance(double delta) { u += delta; }
-	void getPosition(double &x, double &y, double &z)
-		std : cout("test");
+	void getPosition(double &x, double &y, double &z)	
 	{
 		x = radius * cos(u);
 		y = 0;

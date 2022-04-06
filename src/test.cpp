@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-int main(){
+/*int main(){
 	std::cout <<"working";
 }
 class CompileTest
@@ -17,4 +17,4 @@ class CompileTest
 public:
 	
    
-};
+};*/
