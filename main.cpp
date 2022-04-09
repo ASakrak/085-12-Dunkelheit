@@ -496,9 +496,10 @@ public:
 };
 static Orbiter orbiter(5.0);
 float x_position = -10.0;
+
 void timer(int v)
 {
-
+    
 	orbiter.advance(0.01);
 	glutTimerFunc(1000 / 60, timer, v);
 }
@@ -603,15 +604,15 @@ void display()
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
 	glVertex2f(5.0, -2.0);
-
+    
 	// this codes for frame counter on console
 	frame_count++;
 	final_time = time(NULL);
 	if (final_time - initial_time > 0)
 	{
 
-		// cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
-		printf("Frame %d\n", frame_count);
+		cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
+		//printf("Frame %d\n", frame_count);
 
 		frame_count = 0;
 		initial_time = final_time;
@@ -766,6 +767,7 @@ int main(int argc, char **argv)
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
+	cout<<"Willkommen \n";
 	/*
 	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";*/
 	glutInit(&argc, argv); // Initialize GLUT
