@@ -644,11 +644,18 @@ void display()
 void init()
 {
 	// this codes for color
-	GLfloat black[] = {0.0, 1.0, 1.0, 0.0};
-	GLfloat yellow[] = {1.0, 0.0, 0.0, 1.0};
-	GLfloat cyan[] = {1.0, 0.0, 0.0, 1.0};
+	GLfloat black[] = {0.0, 1.0, 1.0, 1.0};
+	GLfloat yellow[] = {0.0, 1.0, 0.0, 1.0};
+	GLfloat cyan[] = {0.0, 1.0, 0.0, 0.0};
 	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
 	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
+	
+	/*green
+	GLfloat black[] = {0.0, 1.0, 1.0, 1.0};
+	GLfloat yellow[] = {0.0, 1.0, 0.0, 1.0};
+	GLfloat cyan[] = {0.0, 1.0, 0.0, 0.0};
+	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
+	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
 	
 	/*black
 	GLfloat black[] = {0.0, 1.0, 1.0, 0.0};
