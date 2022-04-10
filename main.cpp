@@ -8,7 +8,12 @@ By the way so many code not running i know.
 /////////////////////
 
 #pragma once
-
+#include <cstdlib>
+/*import std.core;
+import std.regex;
+module ModuleTest;*/
+//#include "src/ModuleTest.ixx"
+#include "src/ColorDetails.txt"
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>

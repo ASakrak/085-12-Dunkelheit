@@ -1,10 +1,3 @@
-#pragma once
-// this file for colors of shapes
-export module ColorDetails;
-import<iostream>;
-
-export void test()
-{
     /*yellow
     GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
     GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
@@ -78,4 +71,3 @@ export void test()
     GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
     GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
     */
-}
