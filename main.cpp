@@ -13,7 +13,11 @@ By the way so many code not running i know.
 import std.regex;
 module ModuleTest;*/
 //#include "src/ModuleTest.ixx"
+
+// Color details in this file
 #include "src/ColorDetails.txt"
+//
+
 #include <GL/gl.h>
 #include <GL/glu.h>
 #include <GL/glut.h>
