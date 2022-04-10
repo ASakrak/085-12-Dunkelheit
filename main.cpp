@@ -487,7 +487,7 @@ class Orbiter
 public:
 	Orbiter(double radius) : radius(radius), u(0.0) {}
 	void advance(double delta) { u += delta; }
-	void getPosition(double &x, double &y, double &z)	
+	void getPosition(double &x, double &y, double &z)
 	{
 		x = radius * cos(u);
 		y = 0;
@@ -499,7 +499,7 @@ float x_position = -10.0;
 
 void timer(int v)
 {
-    
+
 	orbiter.advance(0.01);
 	glutTimerFunc(1000 / 60, timer, v);
 }
@@ -604,7 +604,7 @@ void display()
 	glVertex2f(-10.0, -3.0);
 	glVertex2f(4.0, -3.0);
 	glVertex2f(5.0, -2.0);
-    
+
 	// this codes for frame counter on console
 	frame_count++;
 	final_time = time(NULL);
@@ -612,7 +612,7 @@ void display()
 	{
 
 		cout << "Frame : " << frame_count / (final_time - initial_time) << endl;
-		//printf("Frame %d\n", frame_count);
+		// printf("Frame %d\n", frame_count);
 
 		frame_count = 0;
 		initial_time = final_time;
@@ -649,81 +649,6 @@ void init()
 	GLfloat cyan[] = {1.0, 0.0, 1.0, 1.0};
 	GLfloat white[] = {0.0, 1.0, 1.0, 0.0};
 	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
-	
-	/*yellow
-	GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat cyan[] = {1.0, 1.0, 0.0, 0.0};
-	GLfloat white[] = {1.0, 1.0, 0.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
-	*/
-	
-	/*darkgreen
-	GLfloat black[] = {0.0, 0.0, 0.0, 0.0};
-	GLfloat yellow[] = {0.0, 0.0, 0.0, 0.0};
-	GLfloat cyan[] = {0.0, 1.0, 0.0, 0.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
-	
-	/*pink
-	GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat cyan[] = {1.0, 0.0, 1.0, 1.0};
-	GLfloat white[] = {0.0, 1.0, 1.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
-	
-	/*white
-	GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat cyan[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
-	
-	/*lightblue
-	GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat cyan[] = {0.0, 1.0, 1.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
-	
-	/*blue
-	GLfloat black[] = {0.0, 1.0, 1.0, 1.0};
-	GLfloat yellow[] = {0.0, 0.0, 1.0, 1.0};
-	GLfloat cyan[] = {0.0, 0.0, 1.0, 0.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
-	*/
-	
-	/*green
-	GLfloat black[] = {0.0, 1.0, 1.0, 1.0};
-	GLfloat yellow[] = {0.0, 1.0, 0.0, 1.0};
-	GLfloat cyan[] = {0.0, 1.0, 0.0, 0.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
-	
-	/*black
-	GLfloat black[] = {0.0, 1.0, 1.0, 0.0};
-	GLfloat yellow[] = {1.0, 0.0, 0.0, 1.0};
-	GLfloat cyan[] = {0.0, 0.0, 0.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
-	
-	
-	/*red
-	GLfloat black[] = {0.0, 1.0, 0.0, 0.0};
-	GLfloat yellow[] = {1.0, 1.0, 0.0, 1.0};
-	GLfloat cyan[] = {1.0, 0.0, 0.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
-	*/
-	
-	/*purple
-	GLfloat black[] = {0.0, 1.0, 1.0, 0.0};
-	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
-	GLfloat cyan[] = {1.0, 0.0, 1.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 0.0};
-	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
-	*/
 
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
@@ -842,7 +767,7 @@ int main(int argc, char **argv)
 	ios_base::sync_with_stdio(0);
 	cin.tie(0);
 	cout.tie(0);
-	cout<<"   WILLKOMMEN \n";
+	cout << "   WILLKOMMEN \n";
 	/*
 	cout << "Welcome to my app / Uygulamama Ho�geldiniz / Dobrodo�li U Moju Aplikaciju / Velkommen til appen min\n";*/
 	glutInit(&argc, argv); // Initialize GLUT
