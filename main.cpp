@@ -669,7 +669,7 @@ void init()
 	GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat cyan[] = {1.0, 0.0, 1.0, 1.0};
-	GLfloat white[] = {1.0, 1.0, 1.0, 1.0};
+	GLfloat white[] = {0.0, 1.0, 1.0, 0.0};
 	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};*/
 	
 	/*white
