@@ -653,12 +653,13 @@ void display()
 void init()
 {
 	// this codes for color
+	// Purple
 	GLfloat black[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat yellow[] = {1.0, 1.0, 1.0, 1.0};
 	GLfloat cyan[] = {1.0, 0.0, 1.0, 1.0};
 	GLfloat white[] = {0.0, 1.0, 1.0, 0.0};
 	GLfloat direction[] = {1.0, 1.0, 1.0, 1.0};
-
+	//
 	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, cyan);
 	glMaterialfv(GL_FRONT, GL_SPECULAR, white);
 	glMaterialf(GL_FRONT, GL_SHININESS, 25);
