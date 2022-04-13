@@ -23,10 +23,12 @@ GLUT - The OpenGL Utility Toolkit
 
 # 085-12 Dunkelheit Images
 
-![2022-03-11 232905](https://user-images.githubusercontent.com/66999194/157958332-6b5de114-2407-45d2-9d2c-143912f0087f.png)
+![2022-04-13 143048](https://user-images.githubusercontent.com/66999194/163170981-d3631119-dd9a-4f1e-b413-46dd434eb4db.png)
+![2022-04-13 142922](https://user-images.githubusercontent.com/66999194/163170990-7f6f3cdf-76e0-4677-be5d-3a1b82cb10d2.png)
+![2022-04-13 143003](https://user-images.githubusercontent.com/66999194/163170996-a166b00c-bd5e-4598-8551-3730aa4a4e4c.png)
 
-![2022-03-11 233115](https://user-images.githubusercontent.com/66999194/157958348-f4190933-324f-4c7a-aae2-73e95c7e4321.png)
-![2022-03-11 233223](https://user-images.githubusercontent.com/66999194/157958395-6814bca6-fb3e-4ae5-acdb-25605ec2a2cf.png)
+
+
 
 
   
