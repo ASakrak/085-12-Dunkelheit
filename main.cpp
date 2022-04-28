@@ -465,6 +465,7 @@ void theCube()
 //>><<<<<<<<<<<<<<<
 void drawGrid()
 {
+	
 	int i;
 	for (i = 0; i < 40; i++)
 	{
