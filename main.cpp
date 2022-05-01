@@ -579,7 +579,7 @@ void display()
 	// glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(5, 0, 0);
-	glVertex3f(0, 5, 0);
+	glVertex3f(0, 4, 0);
 	// glColor4f(1.0f, 1.0f, 1.0f, 0.0f);
 	glVertex3f(0, 0, 0);
 	glVertex3f(4, 0, 0);
