@@ -276,7 +276,8 @@ struct Sign
    }
 }*/
 Sign S[100];
-// this code adding sign to grid but now its not running.
+/* this code adding sign to grid but now its not running.
+__FIXME__*/
 /*void addSign()
 {
 	S[0].state++;
