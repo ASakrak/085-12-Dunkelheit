@@ -1,9 +1,16 @@
 # 085-12-Dunkelheit
-## Light Theme
+
+
+
+
 ![Yoda](https://raw.githubusercontent.com/scarmuega/choose-your-side/master/yoda.svg?sanitize=true#gh-light-mode-only)
 
-## Dark Theme
+
 ![Vader](https://raw.githubusercontent.com/scarmuega/choose-your-side/master/vader.svg?sanitize=true#gh-dark-mode-only)
+
+
+
+
 
 # What Is GLUT?
 GLUT - The OpenGL Utility Toolkit
