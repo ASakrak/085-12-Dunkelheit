@@ -235,7 +235,7 @@ GLuint LoadTexture(const char *filename, int width, int height)
 	glDeleteTextures(1, &texture);
 }*/
 
-/*void reshape(GLint w, GLint h) {
+void reshape(GLint w, GLint h) {
 	glViewport(0, 0, w, h);
 	GLfloat aspect = (GLfloat)w / (GLfloat)h;
 	glMatrixMode(GL_PROJECTION);
@@ -247,7 +247,7 @@ GLuint LoadTexture(const char *filename, int width, int height)
 	// height is smaller, go from -50 .. 50 in height
 	glOrtho(-50.0*aspect, 50.0*aspect, -50.0, 50.0, -1.0, 1.0);
   }
-}*/
+}
 
 struct Sign
 {
@@ -338,12 +338,12 @@ void theCube()
 	// glColor3f(2.0f, 0.5f, 1.0f);
 	// glutSolidCube(0.4);
 	glVertex3f(0, 0, 0);
-	glVertex3f(8, 0, 0);
-	glVertex3f(0, 8, 0);
+	glVertex3f(1, 0, 0);
+	glVertex3f(0, 1, 0);
 	glEnd();
 	glColor3f(0.6f, 0.1f, 0.9f);
 	glTranslatef(cx, cy, cz);
-	glRotatef(0.0, 1.0, 0.0, 0.0);
+	glRotatef(0.0, 0.5, 0.0, 0.0);
 	/*/teapot
 	glutWireTeapot(1.0);
 	glTranslatef(-1.75, 0.5, 0.0);
