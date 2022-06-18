@@ -1,4 +1,4 @@
-/*//////////////////////
+*//////////////////////
 first of all I'm aware that the code is too complicated but I'm too busy to fix it.
 I'm using this app just to have fun with cpp and learn/try something.
 By the way so many code not running i know.
@@ -533,6 +533,7 @@ void display()
 {
 
 	// just for animation*/
+        //vim test
 	/*glClear(GL_COLOR_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
